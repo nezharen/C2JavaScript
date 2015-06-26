@@ -2,7 +2,7 @@
 
 This is a frontend compiler to translate C source codes into JavaScript codes, using ANTLR tools.
 
-Author: WangAnqi, nezharen, tarma
+Author: WangAnqi, nezharen, tarma.
 
 1. Compile:
 

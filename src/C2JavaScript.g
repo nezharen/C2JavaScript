@@ -29,7 +29,130 @@ variableDefineNext returns [String code]
 		{
 			$code = ";";
 		}
+	;
 
+unaryOperator returns [String code]
+@init{
+	code = null;
+}
+	:	'!'
+		{
+			$code = "!";
+		}
+	|	'~'
+		{
+			$code = "~";
+		}
+	;
+
+binaryOperator returns [String code]
+@init{
+	code = null;
+}
+	:	'+'
+		{
+			$code = "+";
+		}
+	|	'-'
+		{
+			$code = "-";
+		}
+	|	'*'
+		{
+			$code = "*";
+		}
+	|	'/'
+		{
+			$code = "/";
+		}
+	|	'>'
+		{
+			$code = ">";
+		}
+	|	'>='
+		{
+			$code = ">=";
+		}
+	|	'<'
+		{
+			$code = "<";
+		}
+	|	'<='
+		{
+			$code = "<=";
+		}
+	|	'!='
+		{
+			$code = "!=";
+		}
+	|	'&&'
+		{
+			$code = "&&";
+		}
+	|	'||'
+		{
+			$code = "||";
+		}
+	|	'&'
+		{
+			$code = "&";
+		}
+	|	'|'
+		{
+			$code = "|";
+		}
+	|	'^'
+		{
+			$code = "^";
+		}
+	|	'<<'
+		{
+			$code = "<<";
+		}
+	|	'>>'
+		{
+			$code = ">>";
+		}
+	|	'='
+		{
+			$code = "=";
+		}
+	|	'+='
+		{
+			$code = "+=";
+		}
+	|	'-='
+		{
+			$code = "-=";
+		}
+	|	'*='
+		{
+			$code = "*=";
+		}
+	|	'/='
+		{
+			$code = "/=";
+		}
+	|	'&='
+		{
+			$code = "&=";
+		}
+	|	'|='
+		{
+			$code = "|=";
+		}
+	|	'^='
+		{
+			$code = "^=";
+		}
+	|	'<<='
+		{
+			$code = "<<=";
+		}
+	|	'>>='
+		{
+			$code = ">>=";
+		}
 	;
 
 type returns [String code]
