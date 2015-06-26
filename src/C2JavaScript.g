@@ -1,9 +1,29 @@
 grammar C2JavaScript;
 
 program
-	:	ID
+	:	variableDefine
 		{
-			System.out.println($ID.text);
+			System.out.println($variableDefine.code);
+		}
+	;
+
+variableDefine returns [String code]
+@int{
+	code = null;
+}
+	:	type ID ';'
+		{
+			$code = $type.code + " " + $ID.text + ";";
+		}
+	;
+
+type returns [String code]
+@init{
+	code = null;
+}
+	:	'char' | 'short' | 'int'
+		{
+			$code = "var";
 		}
 	;
 
