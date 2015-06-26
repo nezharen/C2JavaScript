@@ -7,7 +7,7 @@ Author: WangAnqi, nezharen, tarma
 1. Compile:
 
 	```
-	make compile
+	make
 	```
 
 2. Run:

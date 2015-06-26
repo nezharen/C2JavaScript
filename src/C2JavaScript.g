@@ -8,13 +8,28 @@ program
 	;
 
 variableDefine returns [String code]
-@int{
+@init{
 	code = null;
 }
-	:	type ID ';'
+	:	type ID variableDefineNext
 		{
-			$code = $type.code + " " + $ID.text + ";";
+			$code = $type.code + " " + $ID.text + $variableDefineNext.code;
 		}
+	;
+
+variableDefineNext returns [String code]
+@init{
+	code = null;
+}
+	:	',' ID a=variableDefineNext
+		{
+			$code = ", " + $ID.text + $a.code;
+		}
+	|	';'
+		{
+			$code = ";";
+		}
+
 	;
 
 type returns [String code]
