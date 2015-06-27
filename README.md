@@ -7,6 +7,7 @@ Author: WangAnqi, nezharen, tarma.
 1. Compile:
 
 	```
+	mkdir bin
 	make
 	```
 
