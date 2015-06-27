@@ -45,6 +45,44 @@ functionArgumentNext returns [String code]
 		}
 	;
 
+functionCall returns [String code]
+@init{
+	code = null;
+}
+	:	ID '(' functionCallArgument ')'
+		{
+			$code = $ID.text + "(" + $functionCallArgument.code + ")";
+		}
+	;
+
+functionCallArgument returns [String code]
+@init{
+	code = null;
+}
+	:	ID functionCallArgumentNext
+		{
+			$code = $ID.text + $functionCallArgumentNext.code;
+		}
+	|
+		{
+			$code = "";
+		}
+	;
+
+functionCallArgumentNext returns [String code]
+@init{
+	code = null;
+}
+	:	',' ID a=functionCallArgumentNext
+		{
+			$code = ", " + $ID.text + $a.code;
+		}
+	|
+		{
+			$code = "";
+		}
+	;
+
 statement returns [String code]
 @init{
 	code = null;
@@ -144,6 +182,10 @@ expr returns [String code]
 	|	leftUnaryOperator b=expr exprNext
 		{
 			$code = $leftUnaryOperator.code + $b.code + $exprNext.code;
+		}
+	|	functionCall exprNext
+		{
+			$code = $functionCall.code + $exprNext.code;
 		}
 	;
 

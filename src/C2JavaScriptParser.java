@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 src/C2JavaScript.g 2015-06-27 15:39:16
+// $ANTLR 3.5.1 src/C2JavaScript.g 2015-06-27 16:04:21
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -313,8 +313,185 @@ public class C2JavaScriptParser extends Parser {
 
 
 
+	// $ANTLR start "functionCall"
+	// src/C2JavaScript.g:48:1: functionCall returns [String code] : ID '(' functionCallArgument ')' ;
+	public final String functionCall() throws RecognitionException {
+		String code = null;
+
+
+		Token ID10=null;
+		String functionCallArgument11 =null;
+
+
+			code = null;
+
+		try {
+			// src/C2JavaScript.g:52:2: ( ID '(' functionCallArgument ')' )
+			// src/C2JavaScript.g:52:4: ID '(' functionCallArgument ')'
+			{
+			ID10=(Token)match(input,ID,FOLLOW_ID_in_functionCall143); 
+			match(input,14,FOLLOW_14_in_functionCall145); 
+			pushFollow(FOLLOW_functionCallArgument_in_functionCall147);
+			functionCallArgument11=functionCallArgument();
+			state._fsp--;
+
+			match(input,15,FOLLOW_15_in_functionCall149); 
+
+						code = (ID10!=null?ID10.getText():null) + "(" + functionCallArgument11 + ")";
+					
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return code;
+	}
+	// $ANTLR end "functionCall"
+
+
+
+	// $ANTLR start "functionCallArgument"
+	// src/C2JavaScript.g:58:1: functionCallArgument returns [String code] : ( ID functionCallArgumentNext |);
+	public final String functionCallArgument() throws RecognitionException {
+		String code = null;
+
+
+		Token ID12=null;
+		String functionCallArgumentNext13 =null;
+
+
+			code = null;
+
+		try {
+			// src/C2JavaScript.g:62:2: ( ID functionCallArgumentNext |)
+			int alt3=2;
+			int LA3_0 = input.LA(1);
+			if ( (LA3_0==ID) ) {
+				alt3=1;
+			}
+			else if ( (LA3_0==15) ) {
+				alt3=2;
+			}
+
+			else {
+				NoViableAltException nvae =
+					new NoViableAltException("", 3, 0, input);
+				throw nvae;
+			}
+
+			switch (alt3) {
+				case 1 :
+					// src/C2JavaScript.g:62:4: ID functionCallArgumentNext
+					{
+					ID12=(Token)match(input,ID,FOLLOW_ID_in_functionCallArgument172); 
+					pushFollow(FOLLOW_functionCallArgumentNext_in_functionCallArgument174);
+					functionCallArgumentNext13=functionCallArgumentNext();
+					state._fsp--;
+
+
+								code = (ID12!=null?ID12.getText():null) + functionCallArgumentNext13;
+							
+					}
+					break;
+				case 2 :
+					// src/C2JavaScript.g:67:3: 
+					{
+
+								code = "";
+							
+					}
+					break;
+
+			}
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return code;
+	}
+	// $ANTLR end "functionCallArgument"
+
+
+
+	// $ANTLR start "functionCallArgumentNext"
+	// src/C2JavaScript.g:72:1: functionCallArgumentNext returns [String code] : ( ',' ID a= functionCallArgumentNext |);
+	public final String functionCallArgumentNext() throws RecognitionException {
+		String code = null;
+
+
+		Token ID14=null;
+		String a =null;
+
+
+			code = null;
+
+		try {
+			// src/C2JavaScript.g:76:2: ( ',' ID a= functionCallArgumentNext |)
+			int alt4=2;
+			int LA4_0 = input.LA(1);
+			if ( (LA4_0==21) ) {
+				alt4=1;
+			}
+			else if ( (LA4_0==15) ) {
+				alt4=2;
+			}
+
+			else {
+				NoViableAltException nvae =
+					new NoViableAltException("", 4, 0, input);
+				throw nvae;
+			}
+
+			switch (alt4) {
+				case 1 :
+					// src/C2JavaScript.g:76:4: ',' ID a= functionCallArgumentNext
+					{
+					match(input,21,FOLLOW_21_in_functionCallArgumentNext204); 
+					ID14=(Token)match(input,ID,FOLLOW_ID_in_functionCallArgumentNext206); 
+					pushFollow(FOLLOW_functionCallArgumentNext_in_functionCallArgumentNext210);
+					a=functionCallArgumentNext();
+					state._fsp--;
+
+
+								code = ", " + (ID14!=null?ID14.getText():null) + a;
+							
+					}
+					break;
+				case 2 :
+					// src/C2JavaScript.g:81:3: 
+					{
+
+								code = "";
+							
+					}
+					break;
+
+			}
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+		return code;
+	}
+	// $ANTLR end "functionCallArgumentNext"
+
+
+
 	// $ANTLR start "statement"
-	// src/C2JavaScript.g:48:1: statement returns [String code] : ( variableDefine a= statement | expression b= statement | '{' c= statement '}' |);
+	// src/C2JavaScript.g:86:1: statement returns [String code] : ( variableDefine a= statement | expression b= statement | '{' c= statement '}' |);
 	public final String statement() throws RecognitionException {
 		String code = null;
 
@@ -322,15 +499,15 @@ public class C2JavaScriptParser extends Parser {
 		String a =null;
 		String b =null;
 		String c =null;
-		String variableDefine10 =null;
-		String expression11 =null;
+		String variableDefine15 =null;
+		String expression16 =null;
 
 
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:52:2: ( variableDefine a= statement | expression b= statement | '{' c= statement '}' |)
-			int alt3=4;
+			// src/C2JavaScript.g:90:2: ( variableDefine a= statement | expression b= statement | '{' c= statement '}' |)
+			int alt5=4;
 			switch ( input.LA(1) ) {
 			case 40:
 			case 41:
@@ -338,7 +515,7 @@ public class C2JavaScriptParser extends Parser {
 			case 43:
 			case 44:
 				{
-				alt3=1;
+				alt5=1;
 				}
 				break;
 			case ID:
@@ -349,73 +526,73 @@ public class C2JavaScriptParser extends Parser {
 			case 23:
 			case 50:
 				{
-				alt3=2;
+				alt5=2;
 				}
 				break;
 			case 45:
 				{
-				alt3=3;
+				alt5=3;
 				}
 				break;
 			case 49:
 				{
-				alt3=4;
+				alt5=4;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 3, 0, input);
+					new NoViableAltException("", 5, 0, input);
 				throw nvae;
 			}
-			switch (alt3) {
+			switch (alt5) {
 				case 1 :
-					// src/C2JavaScript.g:52:4: variableDefine a= statement
+					// src/C2JavaScript.g:90:4: variableDefine a= statement
 					{
-					pushFollow(FOLLOW_variableDefine_in_statement143);
-					variableDefine10=variableDefine();
+					pushFollow(FOLLOW_variableDefine_in_statement240);
+					variableDefine15=variableDefine();
 					state._fsp--;
 
-					pushFollow(FOLLOW_statement_in_statement147);
+					pushFollow(FOLLOW_statement_in_statement244);
 					a=statement();
 					state._fsp--;
 
 
-								code = variableDefine10 + a;
+								code = variableDefine15 + a;
 							
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:56:4: expression b= statement
+					// src/C2JavaScript.g:94:4: expression b= statement
 					{
-					pushFollow(FOLLOW_expression_in_statement156);
-					expression11=expression();
+					pushFollow(FOLLOW_expression_in_statement253);
+					expression16=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_statement_in_statement160);
+					pushFollow(FOLLOW_statement_in_statement257);
 					b=statement();
 					state._fsp--;
 
 
-								code = expression11 + b;
+								code = expression16 + b;
 							
 					}
 					break;
 				case 3 :
-					// src/C2JavaScript.g:60:4: '{' c= statement '}'
+					// src/C2JavaScript.g:98:4: '{' c= statement '}'
 					{
-					match(input,45,FOLLOW_45_in_statement169); 
-					pushFollow(FOLLOW_statement_in_statement173);
+					match(input,45,FOLLOW_45_in_statement266); 
+					pushFollow(FOLLOW_statement_in_statement270);
 					c=statement();
 					state._fsp--;
 
-					match(input,49,FOLLOW_49_in_statement175); 
+					match(input,49,FOLLOW_49_in_statement272); 
 
 								code = "{\n" + c + "}\n";
 							
 					}
 					break;
 				case 4 :
-					// src/C2JavaScript.g:65:3: 
+					// src/C2JavaScript.g:103:3: 
 					{
 
 								code = "";
@@ -439,36 +616,36 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "variableDefine"
-	// src/C2JavaScript.g:70:1: variableDefine returns [String code] : type singleVariableDefine variableDefineNext ;
+	// src/C2JavaScript.g:108:1: variableDefine returns [String code] : type singleVariableDefine variableDefineNext ;
 	public final String variableDefine() throws RecognitionException {
 		String code = null;
 
 
-		String type12 =null;
-		String singleVariableDefine13 =null;
-		String variableDefineNext14 =null;
+		String type17 =null;
+		String singleVariableDefine18 =null;
+		String variableDefineNext19 =null;
 
 
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:74:2: ( type singleVariableDefine variableDefineNext )
-			// src/C2JavaScript.g:74:4: type singleVariableDefine variableDefineNext
+			// src/C2JavaScript.g:112:2: ( type singleVariableDefine variableDefineNext )
+			// src/C2JavaScript.g:112:4: type singleVariableDefine variableDefineNext
 			{
-			pushFollow(FOLLOW_type_in_variableDefine205);
-			type12=type();
+			pushFollow(FOLLOW_type_in_variableDefine302);
+			type17=type();
 			state._fsp--;
 
-			pushFollow(FOLLOW_singleVariableDefine_in_variableDefine207);
-			singleVariableDefine13=singleVariableDefine();
+			pushFollow(FOLLOW_singleVariableDefine_in_variableDefine304);
+			singleVariableDefine18=singleVariableDefine();
 			state._fsp--;
 
-			pushFollow(FOLLOW_variableDefineNext_in_variableDefine209);
-			variableDefineNext14=variableDefineNext();
+			pushFollow(FOLLOW_variableDefineNext_in_variableDefine306);
+			variableDefineNext19=variableDefineNext();
 			state._fsp--;
 
 
-						code = type12 + " " + singleVariableDefine13 + variableDefineNext14;
+						code = type17 + " " + singleVariableDefine18 + variableDefineNext19;
 					
 			}
 
@@ -487,28 +664,28 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "singleVariableDefine"
-	// src/C2JavaScript.g:80:1: singleVariableDefine returns [String code] : ID initialValue ;
+	// src/C2JavaScript.g:118:1: singleVariableDefine returns [String code] : ID initialValue ;
 	public final String singleVariableDefine() throws RecognitionException {
 		String code = null;
 
 
-		Token ID15=null;
-		String initialValue16 =null;
+		Token ID20=null;
+		String initialValue21 =null;
 
 
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:84:2: ( ID initialValue )
-			// src/C2JavaScript.g:84:4: ID initialValue
+			// src/C2JavaScript.g:122:2: ( ID initialValue )
+			// src/C2JavaScript.g:122:4: ID initialValue
 			{
-			ID15=(Token)match(input,ID,FOLLOW_ID_in_singleVariableDefine232); 
-			pushFollow(FOLLOW_initialValue_in_singleVariableDefine234);
-			initialValue16=initialValue();
+			ID20=(Token)match(input,ID,FOLLOW_ID_in_singleVariableDefine329); 
+			pushFollow(FOLLOW_initialValue_in_singleVariableDefine331);
+			initialValue21=initialValue();
 			state._fsp--;
 
 
-						code = (ID15!=null?ID15.getText():null) + initialValue16;
+						code = (ID20!=null?ID20.getText():null) + initialValue21;
 					
 			}
 
@@ -527,49 +704,49 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "initialValue"
-	// src/C2JavaScript.g:90:1: initialValue returns [String code] : ( '=' expr |);
+	// src/C2JavaScript.g:128:1: initialValue returns [String code] : ( '=' expr |);
 	public final String initialValue() throws RecognitionException {
 		String code = null;
 
 
-		String expr17 =null;
+		String expr22 =null;
 
 
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:94:2: ( '=' expr |)
-			int alt4=2;
-			int LA4_0 = input.LA(1);
-			if ( (LA4_0==32) ) {
-				alt4=1;
+			// src/C2JavaScript.g:132:2: ( '=' expr |)
+			int alt6=2;
+			int LA6_0 = input.LA(1);
+			if ( (LA6_0==32) ) {
+				alt6=1;
 			}
-			else if ( (LA4_0==21||LA4_0==27) ) {
-				alt4=2;
+			else if ( (LA6_0==21||LA6_0==27) ) {
+				alt6=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 4, 0, input);
+					new NoViableAltException("", 6, 0, input);
 				throw nvae;
 			}
 
-			switch (alt4) {
+			switch (alt6) {
 				case 1 :
-					// src/C2JavaScript.g:94:4: '=' expr
+					// src/C2JavaScript.g:132:4: '=' expr
 					{
-					match(input,32,FOLLOW_32_in_initialValue257); 
-					pushFollow(FOLLOW_expr_in_initialValue259);
-					expr17=expr();
+					match(input,32,FOLLOW_32_in_initialValue354); 
+					pushFollow(FOLLOW_expr_in_initialValue356);
+					expr22=expr();
 					state._fsp--;
 
 
-								code = " = " + expr17;
+								code = " = " + expr22;
 							
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:99:3: 
+					// src/C2JavaScript.g:137:3: 
 					{
 
 								code = "";
@@ -593,56 +770,56 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "variableDefineNext"
-	// src/C2JavaScript.g:104:1: variableDefineNext returns [String code] : ( ',' singleVariableDefine a= variableDefineNext | ';' );
+	// src/C2JavaScript.g:142:1: variableDefineNext returns [String code] : ( ',' singleVariableDefine a= variableDefineNext | ';' );
 	public final String variableDefineNext() throws RecognitionException {
 		String code = null;
 
 
 		String a =null;
-		String singleVariableDefine18 =null;
+		String singleVariableDefine23 =null;
 
 
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:108:2: ( ',' singleVariableDefine a= variableDefineNext | ';' )
-			int alt5=2;
-			int LA5_0 = input.LA(1);
-			if ( (LA5_0==21) ) {
-				alt5=1;
+			// src/C2JavaScript.g:146:2: ( ',' singleVariableDefine a= variableDefineNext | ';' )
+			int alt7=2;
+			int LA7_0 = input.LA(1);
+			if ( (LA7_0==21) ) {
+				alt7=1;
 			}
-			else if ( (LA5_0==27) ) {
-				alt5=2;
+			else if ( (LA7_0==27) ) {
+				alt7=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 5, 0, input);
+					new NoViableAltException("", 7, 0, input);
 				throw nvae;
 			}
 
-			switch (alt5) {
+			switch (alt7) {
 				case 1 :
-					// src/C2JavaScript.g:108:4: ',' singleVariableDefine a= variableDefineNext
+					// src/C2JavaScript.g:146:4: ',' singleVariableDefine a= variableDefineNext
 					{
-					match(input,21,FOLLOW_21_in_variableDefineNext289); 
-					pushFollow(FOLLOW_singleVariableDefine_in_variableDefineNext291);
-					singleVariableDefine18=singleVariableDefine();
+					match(input,21,FOLLOW_21_in_variableDefineNext386); 
+					pushFollow(FOLLOW_singleVariableDefine_in_variableDefineNext388);
+					singleVariableDefine23=singleVariableDefine();
 					state._fsp--;
 
-					pushFollow(FOLLOW_variableDefineNext_in_variableDefineNext295);
+					pushFollow(FOLLOW_variableDefineNext_in_variableDefineNext392);
 					a=variableDefineNext();
 					state._fsp--;
 
 
-								code = ", " + singleVariableDefine18 + a;
+								code = ", " + singleVariableDefine23 + a;
 							
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:112:4: ';'
+					// src/C2JavaScript.g:150:4: ';'
 					{
-					match(input,27,FOLLOW_27_in_variableDefineNext304); 
+					match(input,27,FOLLOW_27_in_variableDefineNext401); 
 
 								code = ";\n";
 							
@@ -665,27 +842,27 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "expression"
-	// src/C2JavaScript.g:118:1: expression returns [String code] : expr ';' ;
+	// src/C2JavaScript.g:156:1: expression returns [String code] : expr ';' ;
 	public final String expression() throws RecognitionException {
 		String code = null;
 
 
-		String expr19 =null;
+		String expr24 =null;
 
 
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:122:2: ( expr ';' )
-			// src/C2JavaScript.g:122:4: expr ';'
+			// src/C2JavaScript.g:160:2: ( expr ';' )
+			// src/C2JavaScript.g:160:4: expr ';'
 			{
-			pushFollow(FOLLOW_expr_in_expression327);
-			expr19=expr();
+			pushFollow(FOLLOW_expr_in_expression424);
+			expr24=expr();
 			state._fsp--;
 
-			match(input,27,FOLLOW_27_in_expression329); 
+			match(input,27,FOLLOW_27_in_expression426); 
 
-						code = expr19 + ";\n";
+						code = expr24 + ";\n";
 					
 			}
 
@@ -704,41 +881,62 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "expr"
-	// src/C2JavaScript.g:128:1: expr returns [String code] : ( ID exprNext | INT exprNext | '(' a= expr ')' exprNext | leftUnaryOperator b= expr exprNext );
+	// src/C2JavaScript.g:166:1: expr returns [String code] : ( ID exprNext | INT exprNext | '(' a= expr ')' exprNext | leftUnaryOperator b= expr exprNext | functionCall exprNext );
 	public final String expr() throws RecognitionException {
 		String code = null;
 
 
-		Token ID20=null;
-		Token INT22=null;
+		Token ID25=null;
+		Token INT27=null;
 		String a =null;
 		String b =null;
-		String exprNext21 =null;
-		String exprNext23 =null;
-		String exprNext24 =null;
-		String leftUnaryOperator25 =null;
 		String exprNext26 =null;
+		String exprNext28 =null;
+		String exprNext29 =null;
+		String leftUnaryOperator30 =null;
+		String exprNext31 =null;
+		String functionCall32 =null;
+		String exprNext33 =null;
 
 
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:132:2: ( ID exprNext | INT exprNext | '(' a= expr ')' exprNext | leftUnaryOperator b= expr exprNext )
-			int alt6=4;
+			// src/C2JavaScript.g:170:2: ( ID exprNext | INT exprNext | '(' a= expr ')' exprNext | leftUnaryOperator b= expr exprNext | functionCall exprNext )
+			int alt8=5;
 			switch ( input.LA(1) ) {
 			case ID:
 				{
-				alt6=1;
+				int LA8_1 = input.LA(2);
+				if ( (LA8_1==14) ) {
+					alt8=5;
+				}
+				else if ( ((LA8_1 >= 10 && LA8_1 <= 13)||(LA8_1 >= 15 && LA8_1 <= 39)||(LA8_1 >= 46 && LA8_1 <= 48)) ) {
+					alt8=1;
+				}
+
+				else {
+					int nvaeMark = input.mark();
+					try {
+						input.consume();
+						NoViableAltException nvae =
+							new NoViableAltException("", 8, 1, input);
+						throw nvae;
+					} finally {
+						input.rewind(nvaeMark);
+					}
+				}
+
 				}
 				break;
 			case INT:
 				{
-				alt6=2;
+				alt8=2;
 				}
 				break;
 			case 14:
 				{
-				alt6=3;
+				alt8=3;
 				}
 				break;
 			case 9:
@@ -746,76 +944,92 @@ public class C2JavaScriptParser extends Parser {
 			case 23:
 			case 50:
 				{
-				alt6=4;
+				alt8=4;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 6, 0, input);
+					new NoViableAltException("", 8, 0, input);
 				throw nvae;
 			}
-			switch (alt6) {
+			switch (alt8) {
 				case 1 :
-					// src/C2JavaScript.g:132:4: ID exprNext
+					// src/C2JavaScript.g:170:4: ID exprNext
 					{
-					ID20=(Token)match(input,ID,FOLLOW_ID_in_expr352); 
-					pushFollow(FOLLOW_exprNext_in_expr354);
-					exprNext21=exprNext();
-					state._fsp--;
-
-
-								code = (ID20!=null?ID20.getText():null) + exprNext21;
-							
-					}
-					break;
-				case 2 :
-					// src/C2JavaScript.g:136:4: INT exprNext
-					{
-					INT22=(Token)match(input,INT,FOLLOW_INT_in_expr363); 
-					pushFollow(FOLLOW_exprNext_in_expr365);
-					exprNext23=exprNext();
-					state._fsp--;
-
-
-								code = (INT22!=null?INT22.getText():null) + exprNext23;
-							
-					}
-					break;
-				case 3 :
-					// src/C2JavaScript.g:140:4: '(' a= expr ')' exprNext
-					{
-					match(input,14,FOLLOW_14_in_expr374); 
-					pushFollow(FOLLOW_expr_in_expr378);
-					a=expr();
-					state._fsp--;
-
-					match(input,15,FOLLOW_15_in_expr380); 
-					pushFollow(FOLLOW_exprNext_in_expr382);
-					exprNext24=exprNext();
-					state._fsp--;
-
-
-								code = "(" + a + ")" + exprNext24;
-							
-					}
-					break;
-				case 4 :
-					// src/C2JavaScript.g:144:4: leftUnaryOperator b= expr exprNext
-					{
-					pushFollow(FOLLOW_leftUnaryOperator_in_expr391);
-					leftUnaryOperator25=leftUnaryOperator();
-					state._fsp--;
-
-					pushFollow(FOLLOW_expr_in_expr395);
-					b=expr();
-					state._fsp--;
-
-					pushFollow(FOLLOW_exprNext_in_expr397);
+					ID25=(Token)match(input,ID,FOLLOW_ID_in_expr449); 
+					pushFollow(FOLLOW_exprNext_in_expr451);
 					exprNext26=exprNext();
 					state._fsp--;
 
 
-								code = leftUnaryOperator25 + b + exprNext26;
+								code = (ID25!=null?ID25.getText():null) + exprNext26;
+							
+					}
+					break;
+				case 2 :
+					// src/C2JavaScript.g:174:4: INT exprNext
+					{
+					INT27=(Token)match(input,INT,FOLLOW_INT_in_expr460); 
+					pushFollow(FOLLOW_exprNext_in_expr462);
+					exprNext28=exprNext();
+					state._fsp--;
+
+
+								code = (INT27!=null?INT27.getText():null) + exprNext28;
+							
+					}
+					break;
+				case 3 :
+					// src/C2JavaScript.g:178:4: '(' a= expr ')' exprNext
+					{
+					match(input,14,FOLLOW_14_in_expr471); 
+					pushFollow(FOLLOW_expr_in_expr475);
+					a=expr();
+					state._fsp--;
+
+					match(input,15,FOLLOW_15_in_expr477); 
+					pushFollow(FOLLOW_exprNext_in_expr479);
+					exprNext29=exprNext();
+					state._fsp--;
+
+
+								code = "(" + a + ")" + exprNext29;
+							
+					}
+					break;
+				case 4 :
+					// src/C2JavaScript.g:182:4: leftUnaryOperator b= expr exprNext
+					{
+					pushFollow(FOLLOW_leftUnaryOperator_in_expr488);
+					leftUnaryOperator30=leftUnaryOperator();
+					state._fsp--;
+
+					pushFollow(FOLLOW_expr_in_expr492);
+					b=expr();
+					state._fsp--;
+
+					pushFollow(FOLLOW_exprNext_in_expr494);
+					exprNext31=exprNext();
+					state._fsp--;
+
+
+								code = leftUnaryOperator30 + b + exprNext31;
+							
+					}
+					break;
+				case 5 :
+					// src/C2JavaScript.g:186:4: functionCall exprNext
+					{
+					pushFollow(FOLLOW_functionCall_in_expr503);
+					functionCall32=functionCall();
+					state._fsp--;
+
+					pushFollow(FOLLOW_exprNext_in_expr505);
+					exprNext33=exprNext();
+					state._fsp--;
+
+
+								code = functionCall32 + exprNext33;
 							
 					}
 					break;
@@ -836,215 +1050,215 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "exprNext"
-	// src/C2JavaScript.g:150:1: exprNext returns [String code] : ( binaryOperator expr a= exprNext | rightUnaryOperator |);
+	// src/C2JavaScript.g:192:1: exprNext returns [String code] : ( binaryOperator expr a= exprNext | rightUnaryOperator |);
 	public final String exprNext() throws RecognitionException {
 		String code = null;
 
 
 		String a =null;
-		String binaryOperator27 =null;
-		String expr28 =null;
-		String rightUnaryOperator29 =null;
+		String binaryOperator34 =null;
+		String expr35 =null;
+		String rightUnaryOperator36 =null;
 
 
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:154:2: ( binaryOperator expr a= exprNext | rightUnaryOperator |)
-			int alt7=3;
+			// src/C2JavaScript.g:196:2: ( binaryOperator expr a= exprNext | rightUnaryOperator |)
+			int alt9=3;
 			switch ( input.LA(1) ) {
 			case 18:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 22:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 16:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 25:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 34:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 35:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 28:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 31:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 33:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 10:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 11:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 48:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 12:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 46:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 38:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 29:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 36:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 32:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 20:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 24:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 17:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 26:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 13:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 47:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 39:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 30:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 37:
 				{
-				alt7=1;
+				alt9=1;
 				}
 				break;
 			case 19:
 				{
-				alt7=2;
+				alt9=2;
 				}
 				break;
 			case 23:
 				{
-				alt7=2;
+				alt9=2;
 				}
 				break;
 			case 15:
 			case 21:
 			case 27:
 				{
-				alt7=3;
+				alt9=3;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 7, 0, input);
+					new NoViableAltException("", 9, 0, input);
 				throw nvae;
 			}
-			switch (alt7) {
+			switch (alt9) {
 				case 1 :
-					// src/C2JavaScript.g:154:4: binaryOperator expr a= exprNext
+					// src/C2JavaScript.g:196:4: binaryOperator expr a= exprNext
 					{
-					pushFollow(FOLLOW_binaryOperator_in_exprNext420);
-					binaryOperator27=binaryOperator();
+					pushFollow(FOLLOW_binaryOperator_in_exprNext528);
+					binaryOperator34=binaryOperator();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expr_in_exprNext422);
-					expr28=expr();
+					pushFollow(FOLLOW_expr_in_exprNext530);
+					expr35=expr();
 					state._fsp--;
 
-					pushFollow(FOLLOW_exprNext_in_exprNext426);
+					pushFollow(FOLLOW_exprNext_in_exprNext534);
 					a=exprNext();
 					state._fsp--;
 
 
-								code = " " + binaryOperator27 + " " + expr28 + a;
+								code = " " + binaryOperator34 + " " + expr35 + a;
 							
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:158:4: rightUnaryOperator
+					// src/C2JavaScript.g:200:4: rightUnaryOperator
 					{
-					pushFollow(FOLLOW_rightUnaryOperator_in_exprNext435);
-					rightUnaryOperator29=rightUnaryOperator();
+					pushFollow(FOLLOW_rightUnaryOperator_in_exprNext543);
+					rightUnaryOperator36=rightUnaryOperator();
 					state._fsp--;
 
 
-								code = rightUnaryOperator29;
+								code = rightUnaryOperator36;
 							
 					}
 					break;
 				case 3 :
-					// src/C2JavaScript.g:163:3: 
+					// src/C2JavaScript.g:205:3: 
 					{
 
 								code = "";
@@ -1068,7 +1282,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "leftUnaryOperator"
-	// src/C2JavaScript.g:168:1: leftUnaryOperator returns [String code] : ( '!' | '~' | '++' | '--' );
+	// src/C2JavaScript.g:210:1: leftUnaryOperator returns [String code] : ( '!' | '~' | '++' | '--' );
 	public final String leftUnaryOperator() throws RecognitionException {
 		String code = null;
 
@@ -1077,66 +1291,66 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:172:2: ( '!' | '~' | '++' | '--' )
-			int alt8=4;
+			// src/C2JavaScript.g:214:2: ( '!' | '~' | '++' | '--' )
+			int alt10=4;
 			switch ( input.LA(1) ) {
 			case 9:
 				{
-				alt8=1;
+				alt10=1;
 				}
 				break;
 			case 50:
 				{
-				alt8=2;
+				alt10=2;
 				}
 				break;
 			case 19:
 				{
-				alt8=3;
+				alt10=3;
 				}
 				break;
 			case 23:
 				{
-				alt8=4;
+				alt10=4;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 8, 0, input);
+					new NoViableAltException("", 10, 0, input);
 				throw nvae;
 			}
-			switch (alt8) {
+			switch (alt10) {
 				case 1 :
-					// src/C2JavaScript.g:172:4: '!'
+					// src/C2JavaScript.g:214:4: '!'
 					{
-					match(input,9,FOLLOW_9_in_leftUnaryOperator465); 
+					match(input,9,FOLLOW_9_in_leftUnaryOperator573); 
 
 								code = "!";
 							
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:176:4: '~'
+					// src/C2JavaScript.g:218:4: '~'
 					{
-					match(input,50,FOLLOW_50_in_leftUnaryOperator474); 
+					match(input,50,FOLLOW_50_in_leftUnaryOperator582); 
 
 								code = "~";
 							
 					}
 					break;
 				case 3 :
-					// src/C2JavaScript.g:180:4: '++'
+					// src/C2JavaScript.g:222:4: '++'
 					{
-					match(input,19,FOLLOW_19_in_leftUnaryOperator483); 
+					match(input,19,FOLLOW_19_in_leftUnaryOperator591); 
 
 								code = "++";
 							
 					}
 					break;
 				case 4 :
-					// src/C2JavaScript.g:184:4: '--'
+					// src/C2JavaScript.g:226:4: '--'
 					{
-					match(input,23,FOLLOW_23_in_leftUnaryOperator492); 
+					match(input,23,FOLLOW_23_in_leftUnaryOperator600); 
 
 								code = "--";
 							
@@ -1159,7 +1373,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "rightUnaryOperator"
-	// src/C2JavaScript.g:190:1: rightUnaryOperator returns [String code] : ( '++' | '--' );
+	// src/C2JavaScript.g:232:1: rightUnaryOperator returns [String code] : ( '++' | '--' );
 	public final String rightUnaryOperator() throws RecognitionException {
 		String code = null;
 
@@ -1168,36 +1382,36 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:194:2: ( '++' | '--' )
-			int alt9=2;
-			int LA9_0 = input.LA(1);
-			if ( (LA9_0==19) ) {
-				alt9=1;
+			// src/C2JavaScript.g:236:2: ( '++' | '--' )
+			int alt11=2;
+			int LA11_0 = input.LA(1);
+			if ( (LA11_0==19) ) {
+				alt11=1;
 			}
-			else if ( (LA9_0==23) ) {
-				alt9=2;
+			else if ( (LA11_0==23) ) {
+				alt11=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 9, 0, input);
+					new NoViableAltException("", 11, 0, input);
 				throw nvae;
 			}
 
-			switch (alt9) {
+			switch (alt11) {
 				case 1 :
-					// src/C2JavaScript.g:194:4: '++'
+					// src/C2JavaScript.g:236:4: '++'
 					{
-					match(input,19,FOLLOW_19_in_rightUnaryOperator515); 
+					match(input,19,FOLLOW_19_in_rightUnaryOperator623); 
 
 								code = "++";
 							
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:198:4: '--'
+					// src/C2JavaScript.g:240:4: '--'
 					{
-					match(input,23,FOLLOW_23_in_rightUnaryOperator524); 
+					match(input,23,FOLLOW_23_in_rightUnaryOperator632); 
 
 								code = "--";
 							
@@ -1220,7 +1434,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "binaryOperator"
-	// src/C2JavaScript.g:204:1: binaryOperator returns [String code] : ( '+' | '-' | '*' | '/' | '>' | '>=' | '<' | '<=' | '==' | '!=' | '&&' | '||' | '&' | '|' | '^' | '<<' | '>>' | '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '<<=' | '>>=' );
+	// src/C2JavaScript.g:246:1: binaryOperator returns [String code] : ( '+' | '-' | '*' | '/' | '>' | '>=' | '<' | '<=' | '==' | '!=' | '&&' | '||' | '&' | '|' | '^' | '<<' | '>>' | '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '<<=' | '>>=' );
 	public final String binaryOperator() throws RecognitionException {
 		String code = null;
 
@@ -1229,388 +1443,388 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:208:2: ( '+' | '-' | '*' | '/' | '>' | '>=' | '<' | '<=' | '==' | '!=' | '&&' | '||' | '&' | '|' | '^' | '<<' | '>>' | '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '<<=' | '>>=' )
-			int alt10=27;
+			// src/C2JavaScript.g:250:2: ( '+' | '-' | '*' | '/' | '>' | '>=' | '<' | '<=' | '==' | '!=' | '&&' | '||' | '&' | '|' | '^' | '<<' | '>>' | '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '<<=' | '>>=' )
+			int alt12=27;
 			switch ( input.LA(1) ) {
 			case 18:
 				{
-				alt10=1;
+				alt12=1;
 				}
 				break;
 			case 22:
 				{
-				alt10=2;
+				alt12=2;
 				}
 				break;
 			case 16:
 				{
-				alt10=3;
+				alt12=3;
 				}
 				break;
 			case 25:
 				{
-				alt10=4;
+				alt12=4;
 				}
 				break;
 			case 34:
 				{
-				alt10=5;
+				alt12=5;
 				}
 				break;
 			case 35:
 				{
-				alt10=6;
+				alt12=6;
 				}
 				break;
 			case 28:
 				{
-				alt10=7;
+				alt12=7;
 				}
 				break;
 			case 31:
 				{
-				alt10=8;
+				alt12=8;
 				}
 				break;
 			case 33:
 				{
-				alt10=9;
+				alt12=9;
 				}
 				break;
 			case 10:
 				{
-				alt10=10;
+				alt12=10;
 				}
 				break;
 			case 11:
 				{
-				alt10=11;
+				alt12=11;
 				}
 				break;
 			case 48:
 				{
-				alt10=12;
+				alt12=12;
 				}
 				break;
 			case 12:
 				{
-				alt10=13;
+				alt12=13;
 				}
 				break;
 			case 46:
 				{
-				alt10=14;
+				alt12=14;
 				}
 				break;
 			case 38:
 				{
-				alt10=15;
+				alt12=15;
 				}
 				break;
 			case 29:
 				{
-				alt10=16;
+				alt12=16;
 				}
 				break;
 			case 36:
 				{
-				alt10=17;
+				alt12=17;
 				}
 				break;
 			case 32:
 				{
-				alt10=18;
+				alt12=18;
 				}
 				break;
 			case 20:
 				{
-				alt10=19;
+				alt12=19;
 				}
 				break;
 			case 24:
 				{
-				alt10=20;
+				alt12=20;
 				}
 				break;
 			case 17:
 				{
-				alt10=21;
+				alt12=21;
 				}
 				break;
 			case 26:
 				{
-				alt10=22;
+				alt12=22;
 				}
 				break;
 			case 13:
 				{
-				alt10=23;
+				alt12=23;
 				}
 				break;
 			case 47:
 				{
-				alt10=24;
+				alt12=24;
 				}
 				break;
 			case 39:
 				{
-				alt10=25;
+				alt12=25;
 				}
 				break;
 			case 30:
 				{
-				alt10=26;
+				alt12=26;
 				}
 				break;
 			case 37:
 				{
-				alt10=27;
+				alt12=27;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 10, 0, input);
+					new NoViableAltException("", 12, 0, input);
 				throw nvae;
 			}
-			switch (alt10) {
+			switch (alt12) {
 				case 1 :
-					// src/C2JavaScript.g:208:4: '+'
+					// src/C2JavaScript.g:250:4: '+'
 					{
-					match(input,18,FOLLOW_18_in_binaryOperator547); 
+					match(input,18,FOLLOW_18_in_binaryOperator655); 
 
 								code = "+";
 							
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:212:4: '-'
+					// src/C2JavaScript.g:254:4: '-'
 					{
-					match(input,22,FOLLOW_22_in_binaryOperator556); 
+					match(input,22,FOLLOW_22_in_binaryOperator664); 
 
 								code = "-";
 							
 					}
 					break;
 				case 3 :
-					// src/C2JavaScript.g:216:4: '*'
+					// src/C2JavaScript.g:258:4: '*'
 					{
-					match(input,16,FOLLOW_16_in_binaryOperator565); 
+					match(input,16,FOLLOW_16_in_binaryOperator673); 
 
 								code = "*";
 							
 					}
 					break;
 				case 4 :
-					// src/C2JavaScript.g:220:4: '/'
+					// src/C2JavaScript.g:262:4: '/'
 					{
-					match(input,25,FOLLOW_25_in_binaryOperator574); 
+					match(input,25,FOLLOW_25_in_binaryOperator682); 
 
 								code = "/";
 							
 					}
 					break;
 				case 5 :
-					// src/C2JavaScript.g:224:4: '>'
+					// src/C2JavaScript.g:266:4: '>'
 					{
-					match(input,34,FOLLOW_34_in_binaryOperator583); 
+					match(input,34,FOLLOW_34_in_binaryOperator691); 
 
 								code = ">";
 							
 					}
 					break;
 				case 6 :
-					// src/C2JavaScript.g:228:4: '>='
+					// src/C2JavaScript.g:270:4: '>='
 					{
-					match(input,35,FOLLOW_35_in_binaryOperator592); 
+					match(input,35,FOLLOW_35_in_binaryOperator700); 
 
 								code = ">=";
 							
 					}
 					break;
 				case 7 :
-					// src/C2JavaScript.g:232:4: '<'
+					// src/C2JavaScript.g:274:4: '<'
 					{
-					match(input,28,FOLLOW_28_in_binaryOperator601); 
+					match(input,28,FOLLOW_28_in_binaryOperator709); 
 
 								code = "<";
 							
 					}
 					break;
 				case 8 :
-					// src/C2JavaScript.g:236:4: '<='
+					// src/C2JavaScript.g:278:4: '<='
 					{
-					match(input,31,FOLLOW_31_in_binaryOperator610); 
+					match(input,31,FOLLOW_31_in_binaryOperator718); 
 
 								code = "<=";
 							
 					}
 					break;
 				case 9 :
-					// src/C2JavaScript.g:240:4: '=='
+					// src/C2JavaScript.g:282:4: '=='
 					{
-					match(input,33,FOLLOW_33_in_binaryOperator619); 
+					match(input,33,FOLLOW_33_in_binaryOperator727); 
 
 								code = "==";
 							
 					}
 					break;
 				case 10 :
-					// src/C2JavaScript.g:244:4: '!='
+					// src/C2JavaScript.g:286:4: '!='
 					{
-					match(input,10,FOLLOW_10_in_binaryOperator628); 
+					match(input,10,FOLLOW_10_in_binaryOperator736); 
 
 								code = "!=";
 							
 					}
 					break;
 				case 11 :
-					// src/C2JavaScript.g:248:4: '&&'
+					// src/C2JavaScript.g:290:4: '&&'
 					{
-					match(input,11,FOLLOW_11_in_binaryOperator637); 
+					match(input,11,FOLLOW_11_in_binaryOperator745); 
 
 								code = "&&";
 							
 					}
 					break;
 				case 12 :
-					// src/C2JavaScript.g:252:4: '||'
+					// src/C2JavaScript.g:294:4: '||'
 					{
-					match(input,48,FOLLOW_48_in_binaryOperator646); 
+					match(input,48,FOLLOW_48_in_binaryOperator754); 
 
 								code = "||";
 							
 					}
 					break;
 				case 13 :
-					// src/C2JavaScript.g:256:4: '&'
+					// src/C2JavaScript.g:298:4: '&'
 					{
-					match(input,12,FOLLOW_12_in_binaryOperator655); 
+					match(input,12,FOLLOW_12_in_binaryOperator763); 
 
 								code = "&";
 							
 					}
 					break;
 				case 14 :
-					// src/C2JavaScript.g:260:4: '|'
+					// src/C2JavaScript.g:302:4: '|'
 					{
-					match(input,46,FOLLOW_46_in_binaryOperator664); 
+					match(input,46,FOLLOW_46_in_binaryOperator772); 
 
 								code = "|";
 							
 					}
 					break;
 				case 15 :
-					// src/C2JavaScript.g:264:4: '^'
+					// src/C2JavaScript.g:306:4: '^'
 					{
-					match(input,38,FOLLOW_38_in_binaryOperator673); 
+					match(input,38,FOLLOW_38_in_binaryOperator781); 
 
 								code = "^";
 							
 					}
 					break;
 				case 16 :
-					// src/C2JavaScript.g:268:4: '<<'
+					// src/C2JavaScript.g:310:4: '<<'
 					{
-					match(input,29,FOLLOW_29_in_binaryOperator682); 
+					match(input,29,FOLLOW_29_in_binaryOperator790); 
 
 								code = "<<";
 							
 					}
 					break;
 				case 17 :
-					// src/C2JavaScript.g:272:4: '>>'
+					// src/C2JavaScript.g:314:4: '>>'
 					{
-					match(input,36,FOLLOW_36_in_binaryOperator691); 
+					match(input,36,FOLLOW_36_in_binaryOperator799); 
 
 								code = ">>";
 							
 					}
 					break;
 				case 18 :
-					// src/C2JavaScript.g:276:4: '='
+					// src/C2JavaScript.g:318:4: '='
 					{
-					match(input,32,FOLLOW_32_in_binaryOperator700); 
+					match(input,32,FOLLOW_32_in_binaryOperator808); 
 
 								code = "=";
 							
 					}
 					break;
 				case 19 :
-					// src/C2JavaScript.g:280:4: '+='
+					// src/C2JavaScript.g:322:4: '+='
 					{
-					match(input,20,FOLLOW_20_in_binaryOperator709); 
+					match(input,20,FOLLOW_20_in_binaryOperator817); 
 
 								code = "+=";
 							
 					}
 					break;
 				case 20 :
-					// src/C2JavaScript.g:284:4: '-='
+					// src/C2JavaScript.g:326:4: '-='
 					{
-					match(input,24,FOLLOW_24_in_binaryOperator718); 
+					match(input,24,FOLLOW_24_in_binaryOperator826); 
 
 								code = "-=";
 							
 					}
 					break;
 				case 21 :
-					// src/C2JavaScript.g:288:4: '*='
+					// src/C2JavaScript.g:330:4: '*='
 					{
-					match(input,17,FOLLOW_17_in_binaryOperator727); 
+					match(input,17,FOLLOW_17_in_binaryOperator835); 
 
 								code = "*=";
 							
 					}
 					break;
 				case 22 :
-					// src/C2JavaScript.g:292:4: '/='
+					// src/C2JavaScript.g:334:4: '/='
 					{
-					match(input,26,FOLLOW_26_in_binaryOperator736); 
+					match(input,26,FOLLOW_26_in_binaryOperator844); 
 
 								code = "/=";
 							
 					}
 					break;
 				case 23 :
-					// src/C2JavaScript.g:296:4: '&='
+					// src/C2JavaScript.g:338:4: '&='
 					{
-					match(input,13,FOLLOW_13_in_binaryOperator745); 
+					match(input,13,FOLLOW_13_in_binaryOperator853); 
 
 								code = "&=";
 							
 					}
 					break;
 				case 24 :
-					// src/C2JavaScript.g:300:4: '|='
+					// src/C2JavaScript.g:342:4: '|='
 					{
-					match(input,47,FOLLOW_47_in_binaryOperator754); 
+					match(input,47,FOLLOW_47_in_binaryOperator862); 
 
 								code = "|=";
 							
 					}
 					break;
 				case 25 :
-					// src/C2JavaScript.g:304:4: '^='
+					// src/C2JavaScript.g:346:4: '^='
 					{
-					match(input,39,FOLLOW_39_in_binaryOperator763); 
+					match(input,39,FOLLOW_39_in_binaryOperator871); 
 
 								code = "^=";
 							
 					}
 					break;
 				case 26 :
-					// src/C2JavaScript.g:308:4: '<<='
+					// src/C2JavaScript.g:350:4: '<<='
 					{
-					match(input,30,FOLLOW_30_in_binaryOperator772); 
+					match(input,30,FOLLOW_30_in_binaryOperator880); 
 
 								code = "<<=";
 							
 					}
 					break;
 				case 27 :
-					// src/C2JavaScript.g:312:4: '>>='
+					// src/C2JavaScript.g:354:4: '>>='
 					{
-					match(input,37,FOLLOW_37_in_binaryOperator781); 
+					match(input,37,FOLLOW_37_in_binaryOperator889); 
 
 								code = ">>=";
 							
@@ -1633,7 +1847,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "type"
-	// src/C2JavaScript.g:318:1: type returns [String code] : ( 'void' | 'char' | 'short' | 'int' | 'long' );
+	// src/C2JavaScript.g:360:1: type returns [String code] : ( 'void' | 'char' | 'short' | 'int' | 'long' );
 	public final String type() throws RecognitionException {
 		String code = null;
 
@@ -1642,80 +1856,80 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:322:2: ( 'void' | 'char' | 'short' | 'int' | 'long' )
-			int alt11=5;
+			// src/C2JavaScript.g:364:2: ( 'void' | 'char' | 'short' | 'int' | 'long' )
+			int alt13=5;
 			switch ( input.LA(1) ) {
 			case 44:
 				{
-				alt11=1;
+				alt13=1;
 				}
 				break;
 			case 40:
 				{
-				alt11=2;
+				alt13=2;
 				}
 				break;
 			case 43:
 				{
-				alt11=3;
+				alt13=3;
 				}
 				break;
 			case 41:
 				{
-				alt11=4;
+				alt13=4;
 				}
 				break;
 			case 42:
 				{
-				alt11=5;
+				alt13=5;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 11, 0, input);
+					new NoViableAltException("", 13, 0, input);
 				throw nvae;
 			}
-			switch (alt11) {
+			switch (alt13) {
 				case 1 :
-					// src/C2JavaScript.g:322:4: 'void'
+					// src/C2JavaScript.g:364:4: 'void'
 					{
-					match(input,44,FOLLOW_44_in_type804); 
+					match(input,44,FOLLOW_44_in_type912); 
 
 								code = "var";
 							
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:326:4: 'char'
+					// src/C2JavaScript.g:368:4: 'char'
 					{
-					match(input,40,FOLLOW_40_in_type813); 
+					match(input,40,FOLLOW_40_in_type921); 
 
 								code = "var";
 							
 					}
 					break;
 				case 3 :
-					// src/C2JavaScript.g:330:4: 'short'
+					// src/C2JavaScript.g:372:4: 'short'
 					{
-					match(input,43,FOLLOW_43_in_type822); 
+					match(input,43,FOLLOW_43_in_type930); 
 
 								code = "var";
 							
 					}
 					break;
 				case 4 :
-					// src/C2JavaScript.g:334:4: 'int'
+					// src/C2JavaScript.g:376:4: 'int'
 					{
-					match(input,41,FOLLOW_41_in_type831); 
+					match(input,41,FOLLOW_41_in_type939); 
 
 								code = "var";
 							
 					}
 					break;
 				case 5 :
-					// src/C2JavaScript.g:338:4: 'long'
+					// src/C2JavaScript.g:380:4: 'long'
 					{
-					match(input,42,FOLLOW_42_in_type840); 
+					match(input,42,FOLLOW_42_in_type948); 
 
 								code = "var";
 							
@@ -1755,77 +1969,88 @@ public class C2JavaScriptParser extends Parser {
 	public static final BitSet FOLLOW_type_in_functionArgumentNext107 = new BitSet(new long[]{0x0000000000000020L});
 	public static final BitSet FOLLOW_ID_in_functionArgumentNext109 = new BitSet(new long[]{0x0000000000200000L});
 	public static final BitSet FOLLOW_functionArgumentNext_in_functionArgumentNext113 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_variableDefine_in_statement143 = new BitSet(new long[]{0x00043F0000884260L});
-	public static final BitSet FOLLOW_statement_in_statement147 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_expression_in_statement156 = new BitSet(new long[]{0x00043F0000884260L});
-	public static final BitSet FOLLOW_statement_in_statement160 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_45_in_statement169 = new BitSet(new long[]{0x00063F0000884260L});
-	public static final BitSet FOLLOW_statement_in_statement173 = new BitSet(new long[]{0x0002000000000000L});
-	public static final BitSet FOLLOW_49_in_statement175 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_type_in_variableDefine205 = new BitSet(new long[]{0x0000000000000020L});
-	public static final BitSet FOLLOW_singleVariableDefine_in_variableDefine207 = new BitSet(new long[]{0x0000000008200000L});
-	public static final BitSet FOLLOW_variableDefineNext_in_variableDefine209 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ID_in_singleVariableDefine232 = new BitSet(new long[]{0x0000000100000000L});
-	public static final BitSet FOLLOW_initialValue_in_singleVariableDefine234 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_32_in_initialValue257 = new BitSet(new long[]{0x0004000000884260L});
-	public static final BitSet FOLLOW_expr_in_initialValue259 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_21_in_variableDefineNext289 = new BitSet(new long[]{0x0000000000000020L});
-	public static final BitSet FOLLOW_singleVariableDefine_in_variableDefineNext291 = new BitSet(new long[]{0x0000000008200000L});
-	public static final BitSet FOLLOW_variableDefineNext_in_variableDefineNext295 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_27_in_variableDefineNext304 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_expr_in_expression327 = new BitSet(new long[]{0x0000000008000000L});
-	public static final BitSet FOLLOW_27_in_expression329 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ID_in_expr352 = new BitSet(new long[]{0x0001C0FFF7DF3C00L});
-	public static final BitSet FOLLOW_exprNext_in_expr354 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_INT_in_expr363 = new BitSet(new long[]{0x0001C0FFF7DF3C00L});
-	public static final BitSet FOLLOW_exprNext_in_expr365 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_14_in_expr374 = new BitSet(new long[]{0x0004000000884260L});
-	public static final BitSet FOLLOW_expr_in_expr378 = new BitSet(new long[]{0x0000000000008000L});
-	public static final BitSet FOLLOW_15_in_expr380 = new BitSet(new long[]{0x0001C0FFF7DF3C00L});
-	public static final BitSet FOLLOW_exprNext_in_expr382 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_leftUnaryOperator_in_expr391 = new BitSet(new long[]{0x0004000000884260L});
-	public static final BitSet FOLLOW_expr_in_expr395 = new BitSet(new long[]{0x0001C0FFF7DF3C00L});
-	public static final BitSet FOLLOW_exprNext_in_expr397 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_binaryOperator_in_exprNext420 = new BitSet(new long[]{0x0004000000884260L});
-	public static final BitSet FOLLOW_expr_in_exprNext422 = new BitSet(new long[]{0x0001C0FFF7DF3C00L});
-	public static final BitSet FOLLOW_exprNext_in_exprNext426 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_rightUnaryOperator_in_exprNext435 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_9_in_leftUnaryOperator465 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_50_in_leftUnaryOperator474 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_19_in_leftUnaryOperator483 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_23_in_leftUnaryOperator492 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_19_in_rightUnaryOperator515 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_23_in_rightUnaryOperator524 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_18_in_binaryOperator547 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_22_in_binaryOperator556 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_16_in_binaryOperator565 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_25_in_binaryOperator574 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_34_in_binaryOperator583 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_35_in_binaryOperator592 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_28_in_binaryOperator601 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_31_in_binaryOperator610 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_33_in_binaryOperator619 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_10_in_binaryOperator628 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_11_in_binaryOperator637 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_48_in_binaryOperator646 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_12_in_binaryOperator655 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_46_in_binaryOperator664 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_38_in_binaryOperator673 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_29_in_binaryOperator682 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_36_in_binaryOperator691 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_32_in_binaryOperator700 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_20_in_binaryOperator709 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_24_in_binaryOperator718 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_17_in_binaryOperator727 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_26_in_binaryOperator736 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_13_in_binaryOperator745 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_47_in_binaryOperator754 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_39_in_binaryOperator763 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_30_in_binaryOperator772 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_37_in_binaryOperator781 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_44_in_type804 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_40_in_type813 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_43_in_type822 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_41_in_type831 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_42_in_type840 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_functionCall143 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_14_in_functionCall145 = new BitSet(new long[]{0x0000000000008020L});
+	public static final BitSet FOLLOW_functionCallArgument_in_functionCall147 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_15_in_functionCall149 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_functionCallArgument172 = new BitSet(new long[]{0x0000000000200000L});
+	public static final BitSet FOLLOW_functionCallArgumentNext_in_functionCallArgument174 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_21_in_functionCallArgumentNext204 = new BitSet(new long[]{0x0000000000000020L});
+	public static final BitSet FOLLOW_ID_in_functionCallArgumentNext206 = new BitSet(new long[]{0x0000000000200000L});
+	public static final BitSet FOLLOW_functionCallArgumentNext_in_functionCallArgumentNext210 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_variableDefine_in_statement240 = new BitSet(new long[]{0x00043F0000884260L});
+	public static final BitSet FOLLOW_statement_in_statement244 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_expression_in_statement253 = new BitSet(new long[]{0x00043F0000884260L});
+	public static final BitSet FOLLOW_statement_in_statement257 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_45_in_statement266 = new BitSet(new long[]{0x00063F0000884260L});
+	public static final BitSet FOLLOW_statement_in_statement270 = new BitSet(new long[]{0x0002000000000000L});
+	public static final BitSet FOLLOW_49_in_statement272 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_type_in_variableDefine302 = new BitSet(new long[]{0x0000000000000020L});
+	public static final BitSet FOLLOW_singleVariableDefine_in_variableDefine304 = new BitSet(new long[]{0x0000000008200000L});
+	public static final BitSet FOLLOW_variableDefineNext_in_variableDefine306 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_singleVariableDefine329 = new BitSet(new long[]{0x0000000100000000L});
+	public static final BitSet FOLLOW_initialValue_in_singleVariableDefine331 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_32_in_initialValue354 = new BitSet(new long[]{0x0004000000884260L});
+	public static final BitSet FOLLOW_expr_in_initialValue356 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_21_in_variableDefineNext386 = new BitSet(new long[]{0x0000000000000020L});
+	public static final BitSet FOLLOW_singleVariableDefine_in_variableDefineNext388 = new BitSet(new long[]{0x0000000008200000L});
+	public static final BitSet FOLLOW_variableDefineNext_in_variableDefineNext392 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_27_in_variableDefineNext401 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_expr_in_expression424 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_27_in_expression426 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_expr449 = new BitSet(new long[]{0x0001C0FFF7DF3C00L});
+	public static final BitSet FOLLOW_exprNext_in_expr451 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_INT_in_expr460 = new BitSet(new long[]{0x0001C0FFF7DF3C00L});
+	public static final BitSet FOLLOW_exprNext_in_expr462 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_14_in_expr471 = new BitSet(new long[]{0x0004000000884260L});
+	public static final BitSet FOLLOW_expr_in_expr475 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_15_in_expr477 = new BitSet(new long[]{0x0001C0FFF7DF3C00L});
+	public static final BitSet FOLLOW_exprNext_in_expr479 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_leftUnaryOperator_in_expr488 = new BitSet(new long[]{0x0004000000884260L});
+	public static final BitSet FOLLOW_expr_in_expr492 = new BitSet(new long[]{0x0001C0FFF7DF3C00L});
+	public static final BitSet FOLLOW_exprNext_in_expr494 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_functionCall_in_expr503 = new BitSet(new long[]{0x0001C0FFF7DF3C00L});
+	public static final BitSet FOLLOW_exprNext_in_expr505 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_binaryOperator_in_exprNext528 = new BitSet(new long[]{0x0004000000884260L});
+	public static final BitSet FOLLOW_expr_in_exprNext530 = new BitSet(new long[]{0x0001C0FFF7DF3C00L});
+	public static final BitSet FOLLOW_exprNext_in_exprNext534 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_rightUnaryOperator_in_exprNext543 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_9_in_leftUnaryOperator573 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_50_in_leftUnaryOperator582 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_19_in_leftUnaryOperator591 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_23_in_leftUnaryOperator600 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_19_in_rightUnaryOperator623 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_23_in_rightUnaryOperator632 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_18_in_binaryOperator655 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_22_in_binaryOperator664 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_16_in_binaryOperator673 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_25_in_binaryOperator682 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_34_in_binaryOperator691 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_35_in_binaryOperator700 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_28_in_binaryOperator709 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_31_in_binaryOperator718 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_33_in_binaryOperator727 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_10_in_binaryOperator736 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_11_in_binaryOperator745 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_48_in_binaryOperator754 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_12_in_binaryOperator763 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_46_in_binaryOperator772 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_38_in_binaryOperator781 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_29_in_binaryOperator790 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_36_in_binaryOperator799 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_32_in_binaryOperator808 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_20_in_binaryOperator817 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_24_in_binaryOperator826 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_17_in_binaryOperator835 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_26_in_binaryOperator844 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_13_in_binaryOperator853 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_47_in_binaryOperator862 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_39_in_binaryOperator871 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_30_in_binaryOperator880 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_37_in_binaryOperator889 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_44_in_type912 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_40_in_type921 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_43_in_type930 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_41_in_type939 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_42_in_type948 = new BitSet(new long[]{0x0000000000000002L});
 }
