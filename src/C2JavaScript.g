@@ -1,9 +1,9 @@
 grammar C2JavaScript;
 
 program
-	:	variableDefine
+	:	expression
 		{
-			System.out.println($variableDefine.code);
+			System.out.println($expression.code);
 		}
 	;
 
@@ -31,7 +31,57 @@ variableDefineNext returns [String code]
 		}
 	;
 
-unaryOperator returns [String code]
+expression returns [String code]
+@init{
+	code = null;
+}
+	:	expr ';'
+		{
+			$code = $expr.code + ";";
+		}
+	;
+
+expr returns [String code]
+@init{
+	code = null;
+}
+	:	ID exprNext
+		{
+			$code = $ID.text + $exprNext.code;
+		}
+	|	INT exprNext
+		{
+			$code = $INT.text + $exprNext.code;
+		}
+	|	'(' a=expr ')' exprNext
+		{
+			$code = "(" + $a.code + ")" + $exprNext.code;
+		}
+	|	leftUnaryOperator b=expr exprNext
+		{
+			$code = $leftUnaryOperator.code + $b.code + $exprNext.code;
+		}
+	;
+
+exprNext returns [String code]
+@init{
+	code = null;
+}
+	:	binaryOperator expr a=exprNext
+		{
+			$code = " " + $binaryOperator.code + " " + $expr.code + $a.code;
+		}
+	|	rightUnaryOperator
+		{
+			$code = $rightUnaryOperator.code;
+		}
+	|
+		{
+			$code = "";
+		}
+	;
+
+leftUnaryOperator returns [String code]
 @init{
 	code = null;
 }
@@ -42,6 +92,28 @@ unaryOperator returns [String code]
 	|	'~'
 		{
 			$code = "~";
+		}
+	|	'++'
+		{
+			$code = "++";
+		}
+	|	'--'
+		{
+			$code = "--";
+		}
+	;
+
+rightUnaryOperator returns [String code]
+@init{
+	code = null;
+}
+	:	'++'
+		{
+			$code = "++";
+		}
+	|	'--'
+		{
+			$code = "--";
 		}
 	;
 
@@ -80,6 +152,10 @@ binaryOperator returns [String code]
 	|	'<='
 		{
 			$code = "<=";
+		}
+	|	'=='
+		{
+			$code = "==";
 		}
 	|	'!='
 		{

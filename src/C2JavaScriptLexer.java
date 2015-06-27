@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 src/C2JavaScript.g 2015-06-26 16:29:46
+// $ANTLR 3.5.1 src/C2JavaScript.g 2015-06-27 14:29:58
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -41,6 +41,11 @@ public class C2JavaScriptLexer extends Lexer {
 	public static final int T__39=39;
 	public static final int T__40=40;
 	public static final int T__41=41;
+	public static final int T__42=42;
+	public static final int T__43=43;
+	public static final int T__44=44;
+	public static final int T__45=45;
+	public static final int T__46=46;
 	public static final int COMMENT=4;
 	public static final int ID=5;
 	public static final int INT=6;
@@ -170,10 +175,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__14;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:7:7: ( '*' )
-			// src/C2JavaScript.g:7:9: '*'
+			// src/C2JavaScript.g:7:7: ( '(' )
+			// src/C2JavaScript.g:7:9: '('
 			{
-			match('*'); 
+			match('('); 
 			}
 
 			state.type = _type;
@@ -190,11 +195,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__15;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:8:7: ( '*=' )
-			// src/C2JavaScript.g:8:9: '*='
+			// src/C2JavaScript.g:8:7: ( ')' )
+			// src/C2JavaScript.g:8:9: ')'
 			{
-			match("*="); 
-
+			match(')'); 
 			}
 
 			state.type = _type;
@@ -211,10 +215,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__16;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:9:7: ( '+' )
-			// src/C2JavaScript.g:9:9: '+'
+			// src/C2JavaScript.g:9:7: ( '*' )
+			// src/C2JavaScript.g:9:9: '*'
 			{
-			match('+'); 
+			match('*'); 
 			}
 
 			state.type = _type;
@@ -231,10 +235,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__17;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:10:7: ( '+=' )
-			// src/C2JavaScript.g:10:9: '+='
+			// src/C2JavaScript.g:10:7: ( '*=' )
+			// src/C2JavaScript.g:10:9: '*='
 			{
-			match("+="); 
+			match("*="); 
 
 			}
 
@@ -252,10 +256,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__18;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:11:7: ( ',' )
-			// src/C2JavaScript.g:11:9: ','
+			// src/C2JavaScript.g:11:7: ( '+' )
+			// src/C2JavaScript.g:11:9: '+'
 			{
-			match(','); 
+			match('+'); 
 			}
 
 			state.type = _type;
@@ -272,10 +276,11 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__19;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:12:7: ( '-' )
-			// src/C2JavaScript.g:12:9: '-'
+			// src/C2JavaScript.g:12:7: ( '++' )
+			// src/C2JavaScript.g:12:9: '++'
 			{
-			match('-'); 
+			match("++"); 
+
 			}
 
 			state.type = _type;
@@ -292,10 +297,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__20;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:13:7: ( '-=' )
-			// src/C2JavaScript.g:13:9: '-='
+			// src/C2JavaScript.g:13:7: ( '+=' )
+			// src/C2JavaScript.g:13:9: '+='
 			{
-			match("-="); 
+			match("+="); 
 
 			}
 
@@ -313,10 +318,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__21;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:14:7: ( '/' )
-			// src/C2JavaScript.g:14:9: '/'
+			// src/C2JavaScript.g:14:7: ( ',' )
+			// src/C2JavaScript.g:14:9: ','
 			{
-			match('/'); 
+			match(','); 
 			}
 
 			state.type = _type;
@@ -333,11 +338,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__22;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:15:7: ( '/=' )
-			// src/C2JavaScript.g:15:9: '/='
+			// src/C2JavaScript.g:15:7: ( '-' )
+			// src/C2JavaScript.g:15:9: '-'
 			{
-			match("/="); 
-
+			match('-'); 
 			}
 
 			state.type = _type;
@@ -354,10 +358,11 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__23;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:16:7: ( ';' )
-			// src/C2JavaScript.g:16:9: ';'
+			// src/C2JavaScript.g:16:7: ( '--' )
+			// src/C2JavaScript.g:16:9: '--'
 			{
-			match(';'); 
+			match("--"); 
+
 			}
 
 			state.type = _type;
@@ -374,10 +379,11 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__24;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:17:7: ( '<' )
-			// src/C2JavaScript.g:17:9: '<'
+			// src/C2JavaScript.g:17:7: ( '-=' )
+			// src/C2JavaScript.g:17:9: '-='
 			{
-			match('<'); 
+			match("-="); 
+
 			}
 
 			state.type = _type;
@@ -394,11 +400,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__25;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:18:7: ( '<<' )
-			// src/C2JavaScript.g:18:9: '<<'
+			// src/C2JavaScript.g:18:7: ( '/' )
+			// src/C2JavaScript.g:18:9: '/'
 			{
-			match("<<"); 
-
+			match('/'); 
 			}
 
 			state.type = _type;
@@ -415,10 +420,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__26;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:19:7: ( '<<=' )
-			// src/C2JavaScript.g:19:9: '<<='
+			// src/C2JavaScript.g:19:7: ( '/=' )
+			// src/C2JavaScript.g:19:9: '/='
 			{
-			match("<<="); 
+			match("/="); 
 
 			}
 
@@ -436,11 +441,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__27;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:20:7: ( '<=' )
-			// src/C2JavaScript.g:20:9: '<='
+			// src/C2JavaScript.g:20:7: ( ';' )
+			// src/C2JavaScript.g:20:9: ';'
 			{
-			match("<="); 
-
+			match(';'); 
 			}
 
 			state.type = _type;
@@ -457,10 +461,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__28;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:21:7: ( '=' )
-			// src/C2JavaScript.g:21:9: '='
+			// src/C2JavaScript.g:21:7: ( '<' )
+			// src/C2JavaScript.g:21:9: '<'
 			{
-			match('='); 
+			match('<'); 
 			}
 
 			state.type = _type;
@@ -477,10 +481,11 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__29;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:22:7: ( '>' )
-			// src/C2JavaScript.g:22:9: '>'
+			// src/C2JavaScript.g:22:7: ( '<<' )
+			// src/C2JavaScript.g:22:9: '<<'
 			{
-			match('>'); 
+			match("<<"); 
+
 			}
 
 			state.type = _type;
@@ -497,10 +502,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__30;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:23:7: ( '>=' )
-			// src/C2JavaScript.g:23:9: '>='
+			// src/C2JavaScript.g:23:7: ( '<<=' )
+			// src/C2JavaScript.g:23:9: '<<='
 			{
-			match(">="); 
+			match("<<="); 
 
 			}
 
@@ -518,10 +523,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__31;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:24:7: ( '>>' )
-			// src/C2JavaScript.g:24:9: '>>'
+			// src/C2JavaScript.g:24:7: ( '<=' )
+			// src/C2JavaScript.g:24:9: '<='
 			{
-			match(">>"); 
+			match("<="); 
 
 			}
 
@@ -539,11 +544,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__32;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:25:7: ( '>>=' )
-			// src/C2JavaScript.g:25:9: '>>='
+			// src/C2JavaScript.g:25:7: ( '=' )
+			// src/C2JavaScript.g:25:9: '='
 			{
-			match(">>="); 
-
+			match('='); 
 			}
 
 			state.type = _type;
@@ -560,10 +564,11 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__33;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:26:7: ( '^' )
-			// src/C2JavaScript.g:26:9: '^'
+			// src/C2JavaScript.g:26:7: ( '==' )
+			// src/C2JavaScript.g:26:9: '=='
 			{
-			match('^'); 
+			match("=="); 
+
 			}
 
 			state.type = _type;
@@ -580,11 +585,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__34;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:27:7: ( '^=' )
-			// src/C2JavaScript.g:27:9: '^='
+			// src/C2JavaScript.g:27:7: ( '>' )
+			// src/C2JavaScript.g:27:9: '>'
 			{
-			match("^="); 
-
+			match('>'); 
 			}
 
 			state.type = _type;
@@ -601,10 +605,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__35;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:28:7: ( 'char' )
-			// src/C2JavaScript.g:28:9: 'char'
+			// src/C2JavaScript.g:28:7: ( '>=' )
+			// src/C2JavaScript.g:28:9: '>='
 			{
-			match("char"); 
+			match(">="); 
 
 			}
 
@@ -622,10 +626,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__36;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:29:7: ( 'int' )
-			// src/C2JavaScript.g:29:9: 'int'
+			// src/C2JavaScript.g:29:7: ( '>>' )
+			// src/C2JavaScript.g:29:9: '>>'
 			{
-			match("int"); 
+			match(">>"); 
 
 			}
 
@@ -643,10 +647,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__37;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:30:7: ( 'short' )
-			// src/C2JavaScript.g:30:9: 'short'
+			// src/C2JavaScript.g:30:7: ( '>>=' )
+			// src/C2JavaScript.g:30:9: '>>='
 			{
-			match("short"); 
+			match(">>="); 
 
 			}
 
@@ -664,10 +668,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__38;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:31:7: ( '|' )
-			// src/C2JavaScript.g:31:9: '|'
+			// src/C2JavaScript.g:31:7: ( '^' )
+			// src/C2JavaScript.g:31:9: '^'
 			{
-			match('|'); 
+			match('^'); 
 			}
 
 			state.type = _type;
@@ -684,10 +688,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__39;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:32:7: ( '|=' )
-			// src/C2JavaScript.g:32:9: '|='
+			// src/C2JavaScript.g:32:7: ( '^=' )
+			// src/C2JavaScript.g:32:9: '^='
 			{
-			match("|="); 
+			match("^="); 
 
 			}
 
@@ -705,10 +709,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__40;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:33:7: ( '||' )
-			// src/C2JavaScript.g:33:9: '||'
+			// src/C2JavaScript.g:33:7: ( 'char' )
+			// src/C2JavaScript.g:33:9: 'char'
 			{
-			match("||"); 
+			match("char"); 
 
 			}
 
@@ -726,10 +730,11 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = T__41;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:34:7: ( '~' )
-			// src/C2JavaScript.g:34:9: '~'
+			// src/C2JavaScript.g:34:7: ( 'int' )
+			// src/C2JavaScript.g:34:9: 'int'
 			{
-			match('~'); 
+			match("int"); 
+
 			}
 
 			state.type = _type;
@@ -741,13 +746,116 @@ public class C2JavaScriptLexer extends Lexer {
 	}
 	// $ANTLR end "T__41"
 
+	// $ANTLR start "T__42"
+	public final void mT__42() throws RecognitionException {
+		try {
+			int _type = T__42;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// src/C2JavaScript.g:35:7: ( 'short' )
+			// src/C2JavaScript.g:35:9: 'short'
+			{
+			match("short"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__42"
+
+	// $ANTLR start "T__43"
+	public final void mT__43() throws RecognitionException {
+		try {
+			int _type = T__43;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// src/C2JavaScript.g:36:7: ( '|' )
+			// src/C2JavaScript.g:36:9: '|'
+			{
+			match('|'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__43"
+
+	// $ANTLR start "T__44"
+	public final void mT__44() throws RecognitionException {
+		try {
+			int _type = T__44;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// src/C2JavaScript.g:37:7: ( '|=' )
+			// src/C2JavaScript.g:37:9: '|='
+			{
+			match("|="); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__44"
+
+	// $ANTLR start "T__45"
+	public final void mT__45() throws RecognitionException {
+		try {
+			int _type = T__45;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// src/C2JavaScript.g:38:7: ( '||' )
+			// src/C2JavaScript.g:38:9: '||'
+			{
+			match("||"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__45"
+
+	// $ANTLR start "T__46"
+	public final void mT__46() throws RecognitionException {
+		try {
+			int _type = T__46;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// src/C2JavaScript.g:39:7: ( '~' )
+			// src/C2JavaScript.g:39:9: '~'
+			{
+			match('~'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__46"
+
 	// $ANTLR start "ID"
 	public final void mID() throws RecognitionException {
 		try {
 			int _type = ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:169:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '_' ) ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' )* )
-			// src/C2JavaScript.g:169:4: ( 'A' .. 'Z' | 'a' .. 'z' | '_' ) ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' )*
+			// src/C2JavaScript.g:245:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '_' ) ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' )* )
+			// src/C2JavaScript.g:245:4: ( 'A' .. 'Z' | 'a' .. 'z' | '_' ) ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' )*
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -757,7 +865,7 @@ public class C2JavaScriptLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// src/C2JavaScript.g:169:31: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' )*
+			// src/C2JavaScript.g:245:31: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' )*
 			loop1:
 			while (true) {
 				int alt1=2;
@@ -802,10 +910,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = INT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:173:2: ( ( '0' .. '9' )+ )
-			// src/C2JavaScript.g:173:4: ( '0' .. '9' )+
+			// src/C2JavaScript.g:249:2: ( ( '0' .. '9' )+ )
+			// src/C2JavaScript.g:249:4: ( '0' .. '9' )+
 			{
-			// src/C2JavaScript.g:173:4: ( '0' .. '9' )+
+			// src/C2JavaScript.g:249:4: ( '0' .. '9' )+
 			int cnt2=0;
 			loop2:
 			while (true) {
@@ -854,12 +962,12 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:177:2: ( '/*' ( . )* '*/' )
-			// src/C2JavaScript.g:177:4: '/*' ( . )* '*/'
+			// src/C2JavaScript.g:253:2: ( '/*' ( . )* '*/' )
+			// src/C2JavaScript.g:253:4: '/*' ( . )* '*/'
 			{
 			match("/*"); 
 
-			// src/C2JavaScript.g:177:9: ( . )*
+			// src/C2JavaScript.g:253:9: ( . )*
 			loop3:
 			while (true) {
 				int alt3=2;
@@ -880,7 +988,7 @@ public class C2JavaScriptLexer extends Lexer {
 
 				switch (alt3) {
 				case 1 :
-					// src/C2JavaScript.g:177:9: .
+					// src/C2JavaScript.g:253:9: .
 					{
 					matchAny(); 
 					}
@@ -912,12 +1020,12 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = LINE_COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:184:2: ( '//' (~ ( '\\r' | '\\n' ) )* ( '\\r' )? '\\n' )
-			// src/C2JavaScript.g:184:4: '//' (~ ( '\\r' | '\\n' ) )* ( '\\r' )? '\\n'
+			// src/C2JavaScript.g:260:2: ( '//' (~ ( '\\r' | '\\n' ) )* ( '\\r' )? '\\n' )
+			// src/C2JavaScript.g:260:4: '//' (~ ( '\\r' | '\\n' ) )* ( '\\r' )? '\\n'
 			{
 			match("//"); 
 
-			// src/C2JavaScript.g:184:9: (~ ( '\\r' | '\\n' ) )*
+			// src/C2JavaScript.g:260:9: (~ ( '\\r' | '\\n' ) )*
 			loop4:
 			while (true) {
 				int alt4=2;
@@ -946,7 +1054,7 @@ public class C2JavaScriptLexer extends Lexer {
 				}
 			}
 
-			// src/C2JavaScript.g:184:27: ( '\\r' )?
+			// src/C2JavaScript.g:260:27: ( '\\r' )?
 			int alt5=2;
 			int LA5_0 = input.LA(1);
 			if ( (LA5_0=='\r') ) {
@@ -954,7 +1062,7 @@ public class C2JavaScriptLexer extends Lexer {
 			}
 			switch (alt5) {
 				case 1 :
-					// src/C2JavaScript.g:184:27: '\\r'
+					// src/C2JavaScript.g:260:27: '\\r'
 					{
 					match('\r'); 
 					}
@@ -982,10 +1090,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:191:2: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-			// src/C2JavaScript.g:191:4: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			// src/C2JavaScript.g:267:2: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+			// src/C2JavaScript.g:267:4: ( ' ' | '\\t' | '\\r' | '\\n' )+
 			{
-			// src/C2JavaScript.g:191:4: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			// src/C2JavaScript.g:267:4: ( ' ' | '\\t' | '\\r' | '\\n' )+
 			int cnt6=0;
 			loop6:
 			while (true) {
@@ -1034,8 +1142,8 @@ public class C2JavaScriptLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// src/C2JavaScript.g:1:8: ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | ID | INT | COMMENT | LINE_COMMENT | WS )
-		int alt7=38;
+		// src/C2JavaScript.g:1:8: ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | ID | INT | COMMENT | LINE_COMMENT | WS )
+		int alt7=43;
 		alt7 = dfa7.predict(input);
 		switch (alt7) {
 			case 1 :
@@ -1270,35 +1378,70 @@ public class C2JavaScriptLexer extends Lexer {
 				}
 				break;
 			case 34 :
-				// src/C2JavaScript.g:1:207: ID
+				// src/C2JavaScript.g:1:207: T__42
+				{
+				mT__42(); 
+
+				}
+				break;
+			case 35 :
+				// src/C2JavaScript.g:1:213: T__43
+				{
+				mT__43(); 
+
+				}
+				break;
+			case 36 :
+				// src/C2JavaScript.g:1:219: T__44
+				{
+				mT__44(); 
+
+				}
+				break;
+			case 37 :
+				// src/C2JavaScript.g:1:225: T__45
+				{
+				mT__45(); 
+
+				}
+				break;
+			case 38 :
+				// src/C2JavaScript.g:1:231: T__46
+				{
+				mT__46(); 
+
+				}
+				break;
+			case 39 :
+				// src/C2JavaScript.g:1:237: ID
 				{
 				mID(); 
 
 				}
 				break;
-			case 35 :
-				// src/C2JavaScript.g:1:210: INT
+			case 40 :
+				// src/C2JavaScript.g:1:240: INT
 				{
 				mINT(); 
 
 				}
 				break;
-			case 36 :
-				// src/C2JavaScript.g:1:214: COMMENT
+			case 41 :
+				// src/C2JavaScript.g:1:244: COMMENT
 				{
 				mCOMMENT(); 
 
 				}
 				break;
-			case 37 :
-				// src/C2JavaScript.g:1:222: LINE_COMMENT
+			case 42 :
+				// src/C2JavaScript.g:1:252: LINE_COMMENT
 				{
 				mLINE_COMMENT(); 
 
 				}
 				break;
-			case 38 :
-				// src/C2JavaScript.g:1:235: WS
+			case 43 :
+				// src/C2JavaScript.g:1:265: WS
 				{
 				mWS(); 
 
@@ -1311,92 +1454,99 @@ public class C2JavaScriptLexer extends Lexer {
 
 	protected DFA7 dfa7 = new DFA7(this);
 	static final String DFA7_eotS =
-		"\1\uffff\1\26\1\31\1\33\1\35\1\uffff\1\37\1\43\1\uffff\1\46\1\uffff\1"+
-		"\51\1\53\3\22\1\61\23\uffff\1\63\3\uffff\1\65\3\uffff\3\22\7\uffff\1\22"+
-		"\1\72\1\22\1\74\1\uffff\1\22\1\uffff\1\76\1\uffff";
+		"\1\uffff\1\30\1\33\2\uffff\1\35\1\40\1\uffff\1\43\1\47\1\uffff\1\52\1"+
+		"\54\1\57\1\61\3\24\1\67\25\uffff\1\71\5\uffff\1\73\3\uffff\3\24\7\uffff"+
+		"\1\24\1\100\1\24\1\102\1\uffff\1\24\1\uffff\1\104\1\uffff";
 	static final String DFA7_eofS =
-		"\77\uffff";
+		"\105\uffff";
 	static final String DFA7_minS =
-		"\1\11\1\75\1\46\2\75\1\uffff\1\75\1\52\1\uffff\1\74\1\uffff\2\75\1\150"+
-		"\1\156\1\150\1\75\23\uffff\1\75\3\uffff\1\75\3\uffff\1\141\1\164\1\157"+
-		"\7\uffff\1\162\1\60\1\162\1\60\1\uffff\1\164\1\uffff\1\60\1\uffff";
+		"\1\11\1\75\1\46\2\uffff\1\75\1\53\1\uffff\1\55\1\52\1\uffff\1\74\3\75"+
+		"\1\150\1\156\1\150\1\75\25\uffff\1\75\5\uffff\1\75\3\uffff\1\141\1\164"+
+		"\1\157\7\uffff\1\162\1\60\1\162\1\60\1\uffff\1\164\1\uffff\1\60\1\uffff";
 	static final String DFA7_maxS =
-		"\1\176\4\75\1\uffff\2\75\1\uffff\1\75\1\uffff\1\76\1\75\1\150\1\156\1"+
-		"\150\1\174\23\uffff\1\75\3\uffff\1\75\3\uffff\1\141\1\164\1\157\7\uffff"+
+		"\1\176\2\75\2\uffff\2\75\1\uffff\2\75\1\uffff\2\75\1\76\1\75\1\150\1\156"+
+		"\1\150\1\174\25\uffff\1\75\5\uffff\1\75\3\uffff\1\141\1\164\1\157\7\uffff"+
 		"\1\162\1\172\1\162\1\172\1\uffff\1\164\1\uffff\1\172\1\uffff";
 	static final String DFA7_acceptS =
-		"\5\uffff\1\12\2\uffff\1\17\1\uffff\1\24\6\uffff\1\41\1\42\1\43\1\46\1"+
-		"\2\1\1\1\3\1\5\1\4\1\7\1\6\1\11\1\10\1\14\1\13\1\16\1\44\1\45\1\15\1\uffff"+
-		"\1\23\1\20\1\26\1\uffff\1\25\1\32\1\31\3\uffff\1\37\1\40\1\36\1\22\1\21"+
-		"\1\30\1\27\4\uffff\1\34\1\uffff\1\33\1\uffff\1\35";
+		"\3\uffff\1\6\1\7\2\uffff\1\15\2\uffff\1\23\10\uffff\1\46\1\47\1\50\1\53"+
+		"\1\2\1\1\1\3\1\5\1\4\1\11\1\10\1\13\1\14\1\12\1\17\1\20\1\16\1\22\1\51"+
+		"\1\52\1\21\1\uffff\1\27\1\24\1\31\1\30\1\33\1\uffff\1\32\1\37\1\36\3\uffff"+
+		"\1\44\1\45\1\43\1\26\1\25\1\35\1\34\4\uffff\1\41\1\uffff\1\40\1\uffff"+
+		"\1\42";
 	static final String DFA7_specialS =
-		"\77\uffff}>";
+		"\105\uffff}>";
 	static final String[] DFA7_transitionS = {
-			"\2\24\2\uffff\1\24\22\uffff\1\24\1\1\4\uffff\1\2\3\uffff\1\3\1\4\1\5"+
-			"\1\6\1\uffff\1\7\12\23\1\uffff\1\10\1\11\1\12\1\13\2\uffff\32\22\3\uffff"+
-			"\1\14\1\22\1\uffff\2\22\1\15\5\22\1\16\11\22\1\17\7\22\1\uffff\1\20\1"+
-			"\uffff\1\21",
-			"\1\25",
-			"\1\27\26\uffff\1\30",
-			"\1\32",
+			"\2\26\2\uffff\1\26\22\uffff\1\26\1\1\4\uffff\1\2\1\uffff\1\3\1\4\1\5"+
+			"\1\6\1\7\1\10\1\uffff\1\11\12\25\1\uffff\1\12\1\13\1\14\1\15\2\uffff"+
+			"\32\24\3\uffff\1\16\1\24\1\uffff\2\24\1\17\5\24\1\20\11\24\1\21\7\24"+
+			"\1\uffff\1\22\1\uffff\1\23",
+			"\1\27",
+			"\1\31\26\uffff\1\32",
+			"",
+			"",
 			"\1\34",
+			"\1\36\21\uffff\1\37",
 			"",
-			"\1\36",
-			"\1\41\4\uffff\1\42\15\uffff\1\40",
+			"\1\41\17\uffff\1\42",
+			"\1\45\4\uffff\1\46\15\uffff\1\44",
 			"",
-			"\1\44\1\45",
-			"",
-			"\1\47\1\50",
-			"\1\52",
-			"\1\54",
-			"\1\55",
-			"\1\56",
-			"\1\57\76\uffff\1\60",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
+			"\1\50\1\51",
+			"\1\53",
+			"\1\55\1\56",
+			"\1\60",
 			"\1\62",
-			"",
-			"",
-			"",
+			"\1\63",
 			"\1\64",
+			"\1\65\76\uffff\1\66",
 			"",
 			"",
 			"",
-			"\1\66",
-			"\1\67",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
 			"\1\70",
 			"",
 			"",
 			"",
 			"",
 			"",
+			"\1\72",
 			"",
 			"",
-			"\1\71",
-			"\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
-			"\1\73",
-			"\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
 			"",
+			"\1\74",
 			"\1\75",
+			"\1\76",
 			"",
-			"\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"\1\77",
+			"\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
+			"\1\101",
+			"\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
+			"",
+			"\1\103",
+			"",
+			"\12\24\7\uffff\32\24\4\uffff\1\24\1\uffff\32\24",
 			""
 	};
 
@@ -1431,7 +1581,7 @@ public class C2JavaScriptLexer extends Lexer {
 		}
 		@Override
 		public String getDescription() {
-			return "1:1: Tokens : ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | ID | INT | COMMENT | LINE_COMMENT | WS );";
+			return "1:1: Tokens : ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | ID | INT | COMMENT | LINE_COMMENT | WS );";
 		}
 	}
 
