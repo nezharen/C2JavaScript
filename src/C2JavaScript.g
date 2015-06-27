@@ -1,9 +1,69 @@
 grammar C2JavaScript;
 
 program
-	:	variableDefine
+	:	functionDefine
 		{
-			System.out.println($variableDefine.code);
+			System.out.println($functionDefine.code);
+		}
+	;
+
+functionDefine returns [String code]
+@init{
+	code = null;
+}
+	:	type ID '(' functionArgument ')' '{' statement '}'
+		{
+			$code = "function " + $ID.text + "(" + $functionArgument.code + ")\n" + "{\n" + $statement.code + "}\n";
+		}
+	;
+
+functionArgument returns [String code]
+@init{
+	code = null;
+}
+	:	type ID functionArgumentNext
+		{
+			$code = $type.code + " " + $ID.text + $functionArgumentNext.code;
+		}
+	|
+		{
+			$code = "";
+		}
+	;
+
+functionArgumentNext returns [String code]
+@init{
+	code = null;
+}
+	:	',' type ID a=functionArgumentNext
+		{
+			$code = ", " + $type.code + " " + $ID.text + $a.code;
+		}
+	|
+		{
+			$code = "";
+		}
+	;
+
+statement returns [String code]
+@init{
+	code = null;
+}
+	:	variableDefine a=statement
+		{
+			$code = $variableDefine.code + $a.code;
+		}
+	|	expression b=statement
+		{
+			$code = $expression.code + $b.code;
+		}
+	|	'{' c=statement '}'
+		{
+			$code = "{\n" + $c.code + "}\n";
+		}
+	|
+		{
+			$code = "";
 		}
 	;
 
@@ -51,7 +111,7 @@ variableDefineNext returns [String code]
 		}
 	|	';'
 		{
-			$code = ";";
+			$code = ";\n";
 		}
 	;
 
@@ -61,7 +121,7 @@ expression returns [String code]
 }
 	:	expr ';'
 		{
-			$code = $expr.code + ";";
+			$code = $expr.code + ";\n";
 		}
 	;
 
@@ -259,7 +319,23 @@ type returns [String code]
 @init{
 	code = null;
 }
-	:	'char' | 'short' | 'int'
+	:	'void'
+		{
+			$code = "var";
+		}
+	|	'char'
+		{
+			$code = "var";
+		}
+	|	'short'
+		{
+			$code = "var";
+		}
+	|	'int'
+		{
+			$code = "var";
+		}
+	|	'long'
 		{
 			$code = "var";
 		}

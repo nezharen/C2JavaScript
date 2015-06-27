@@ -1,1 +1,9 @@
-int a = 3, b = 2;
+int work(int x, int y)
+{
+	int a, b;
+
+	a = 2;
+	b = 3;
+	a = a++;
+}
+

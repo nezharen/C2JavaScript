@@ -1,1 +1,8 @@
-var a = 3, b = 2;
+function work(var x, var y)
+{
+var a, b;
+a = 2;
+b = 3;
+a = a++;
+}
+
