@@ -22,10 +22,10 @@ float calc_exp(char* s)
 	float temp;
 	int num_flag = 0;
 	int i = 0;
-	char c = 0;
-	while (*s)
+	char c;
+	while (s[i])
 	{
-		char c = *s;
+		c = s[i];
 		if (c >= '0' && c <= '9')
 		{
 			if (num_flag == 0)
@@ -89,7 +89,7 @@ float calc_exp(char* s)
                                 break;
 			}
 		}
-		s++;
+		i++;
 	}
 	while (sign_stack_top > -1)
 	{
