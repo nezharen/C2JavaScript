@@ -10,7 +10,7 @@ int str_len(char* s)
 
 int kmp(char* s, char* t, int* result)
 {
-	int pi[1000] = {-1};
+	int pi[1000];
 	int m = str_len(t);
 	int k = -1;
 	int q;
@@ -18,6 +18,7 @@ int kmp(char* s, char* t, int* result)
 	int i;
 	int res_len = 0;
 
+	pi[0] = -1;
 	for (q = 1; q < m; q++)
 	{
 		while (k >= 0 && t[k + 1] != t[q])

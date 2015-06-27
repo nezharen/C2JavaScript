@@ -15,7 +15,7 @@ float calc_one_step(char sign, float a, float b)
 
 float calc_exp(char* s)
 {
-	float num_stack[100] = {0.0};
+	float num_stack[100];
 	int num_stack_top = 0;
 	float sign_stack[100];
 	int sign_stack_top = -1;
@@ -23,6 +23,7 @@ float calc_exp(char* s)
 	int num_flag = 0;
 	int i = 0;
 	char c;
+	num_stack[0] = 0.0;
 	while (s[i])
 	{
 		c = s[i];
