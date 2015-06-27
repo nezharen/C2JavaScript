@@ -59,9 +59,9 @@ functionCallArgument returns [String code]
 @init{
 	code = null;
 }
-	:	ID functionCallArgumentNext
+	:	expr functionCallArgumentNext
 		{
-			$code = $ID.text + $functionCallArgumentNext.code;
+			$code = $expr.code + $functionCallArgumentNext.code;
 		}
 	|
 		{
@@ -73,9 +73,9 @@ functionCallArgumentNext returns [String code]
 @init{
 	code = null;
 }
-	:	',' ID a=functionCallArgumentNext
+	:	',' expr a=functionCallArgumentNext
 		{
-			$code = ", " + $ID.text + $a.code;
+			$code = ", " + $expr.code + $a.code;
 		}
 	|
 		{
@@ -95,9 +95,37 @@ statement returns [String code]
 		{
 			$code = $expression.code + $b.code;
 		}
-	|	'{' c=statement '}'
+	|	ifStatement c=statement
 		{
-			$code = "{\n" + $c.code + "}\n";
+			$code = $ifStatement.code + $c.code;
+		}
+	|	'{' d=statement '}'
+		{
+			$code = "{\n" + $d.code + "}\n";
+		}
+	|
+		{
+			$code = "";
+		}
+	;
+
+ifStatement returns [String code]
+@init{
+	code = null;
+}
+	:	'if' '(' expr ')' statement ifStatementNext
+		{
+			$code = "if (" + $expr.code + ")\n" + $statement.code + $ifStatementNext.code;
+		}
+	;
+
+ifStatementNext returns [String code]
+@init{
+	code = null;
+}
+	:	'else' statement
+		{
+			$code = "else\n" + $statement.code;
 		}
 	|
 		{
@@ -226,6 +254,10 @@ leftUnaryOperator returns [String code]
 	|	'--'
 		{
 			$code = "--";
+		}
+	|	'-'
+		{
+			$code = "-";
 		}
 	;
 
@@ -378,6 +410,14 @@ type returns [String code]
 			$code = "var";
 		}
 	|	'long'
+		{
+			$code = "var";
+		}
+	|	'float'
+		{
+			$code = "var";
+		}
+	|	'double'
 		{
 			$code = "var";
 		}
