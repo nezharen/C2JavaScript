@@ -1,4 +1,4 @@
-int work(int x, int y)
+int work(int *x, int y)
 {
 	int a = 3, b = 2;
 
@@ -17,5 +17,20 @@ int work(int x, int y)
 	{
 		return -1;
 	}
+
+	switch (day)
+	{
+	case 0:
+		a = 2;
+		break;
+	default:
+		b = 3;
+		break;
+	}
+
+	for (i = 1; i <= n; i++)
+		a = a + 1;
+	while (a == b)
+		a = a + 2;
 }
 

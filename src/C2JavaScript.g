@@ -23,7 +23,7 @@ functionArgument returns [String code]
 }
 	:	type ID functionArgumentNext
 		{
-			$code = $type.code + " " + $ID.text + $functionArgumentNext.code;
+			$code = $ID.text + $functionArgumentNext.code;
 		}
 	|
 		{
@@ -37,7 +37,7 @@ functionArgumentNext returns [String code]
 }
 	:	',' type ID a=functionArgumentNext
 		{
-			$code = ", " + $type.code + " " + $ID.text + $a.code;
+			$code = ", " + $ID.text + $a.code;
 		}
 	|
 		{
@@ -99,9 +99,33 @@ statement returns [String code]
 		{
 			$code = $ifStatement.code + $c.code;
 		}
-	|	'{' d=statement '}'
+	|	switchStatement d=statement
 		{
-			$code = "{\n" + $d.code + "}\n";
+			$code = $switchStatement.code + $d.code;
+		}
+	|	forStatement e=statement
+		{
+			$code = $forStatement.code + $e.code;
+		}
+	|	whileStatement f=statement
+		{
+			$code = $whileStatement.code + $f.code;
+		}
+	|	returnStatement g=statement
+		{
+			$code = $returnStatement.code + $g.code;
+		}
+	|	'{' h=statement '}'
+		{
+			$code = "{\n" + $h.code + "}\n";
+		}
+	|	'break;'
+		{
+			$code = "break;\n";
+		}
+	|	'continue;'
+		{
+			$code = "continue;\n";
 		}
 	|
 		{
@@ -130,6 +154,64 @@ ifStatementNext returns [String code]
 	|
 		{
 			$code = "";
+		}
+	;
+
+switchStatement returns [String code]
+@init{
+	code = null;
+}
+	:	'switch' '(' expr ')' '{' caseStatement '}'
+		{
+			$code = "switch (" + $expr.code + ")\n{\n" + $caseStatement.code + "}\n";
+		}
+	;
+
+caseStatement returns [String code]
+@init{
+	code = null;
+}
+	:	'case' expr ':' statement a=caseStatement
+		{
+			$code = "case " + $expr.code + ":\n" + $statement.code + $a.code;
+		}
+	|	'default:' statement b=caseStatement
+		{
+			$code = "default:\n" + $statement.code + $b.code;
+		}
+	|
+		{
+			$code = "";
+		}
+	;
+
+forStatement returns [String code]
+@init{
+	code = null;
+}
+	:	'for' '(' a=expr ';' b=expr ';' c=expr ')' statement
+		{
+			$code = "for (" + $a.code + "; " + $b.code + "; " + $c.code + ")\n" + $statement.code;
+		}
+	;
+
+whileStatement returns [String code]
+@init{
+	code = null;
+}
+	:	'while' '(' expr ')' statement
+		{
+			$code = "while (" + $expr.code + ")\n"  + $statement.code;
+		}
+	;
+
+returnStatement returns [String code]
+@init{
+	code = null;
+}
+	:	'return' expression
+		{
+			$code = "return " + $expression.code;
 		}
 	;
 
@@ -393,34 +475,39 @@ type returns [String code]
 @init{
 	code = null;
 }
-	:	'void'
+	:	'void' typeNext
 		{
 			$code = "var";
 		}
-	|	'char'
+	|	'char' typeNext
 		{
 			$code = "var";
 		}
-	|	'short'
+	|	'short' typeNext
 		{
 			$code = "var";
 		}
-	|	'int'
+	|	'int' typeNext
 		{
 			$code = "var";
 		}
-	|	'long'
+	|	'long' typeNext
 		{
 			$code = "var";
 		}
-	|	'float'
+	|	'float' typeNext
 		{
 			$code = "var";
 		}
-	|	'double'
+	|	'double' typeNext
 		{
 			$code = "var";
 		}
+	;
+
+typeNext
+	:	'*'
+	|
 	;
 
 ID
