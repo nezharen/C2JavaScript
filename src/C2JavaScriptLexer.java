@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 src/C2JavaScript.g 2015-06-27 14:29:58
+// $ANTLR 3.5.1 src/C2JavaScript.g 2015-06-27 14:44:45
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -854,8 +854,8 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:245:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '_' ) ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' )* )
-			// src/C2JavaScript.g:245:4: ( 'A' .. 'Z' | 'a' .. 'z' | '_' ) ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' )*
+			// src/C2JavaScript.g:269:2: ( ( 'A' .. 'Z' | 'a' .. 'z' | '_' ) ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' )* )
+			// src/C2JavaScript.g:269:4: ( 'A' .. 'Z' | 'a' .. 'z' | '_' ) ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' )*
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -865,7 +865,7 @@ public class C2JavaScriptLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// src/C2JavaScript.g:245:31: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' )*
+			// src/C2JavaScript.g:269:31: ( 'A' .. 'Z' | 'a' .. 'z' | '0' .. '9' | '_' )*
 			loop1:
 			while (true) {
 				int alt1=2;
@@ -910,10 +910,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = INT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:249:2: ( ( '0' .. '9' )+ )
-			// src/C2JavaScript.g:249:4: ( '0' .. '9' )+
+			// src/C2JavaScript.g:273:2: ( ( '0' .. '9' )+ )
+			// src/C2JavaScript.g:273:4: ( '0' .. '9' )+
 			{
-			// src/C2JavaScript.g:249:4: ( '0' .. '9' )+
+			// src/C2JavaScript.g:273:4: ( '0' .. '9' )+
 			int cnt2=0;
 			loop2:
 			while (true) {
@@ -962,12 +962,12 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:253:2: ( '/*' ( . )* '*/' )
-			// src/C2JavaScript.g:253:4: '/*' ( . )* '*/'
+			// src/C2JavaScript.g:277:2: ( '/*' ( . )* '*/' )
+			// src/C2JavaScript.g:277:4: '/*' ( . )* '*/'
 			{
 			match("/*"); 
 
-			// src/C2JavaScript.g:253:9: ( . )*
+			// src/C2JavaScript.g:277:9: ( . )*
 			loop3:
 			while (true) {
 				int alt3=2;
@@ -988,7 +988,7 @@ public class C2JavaScriptLexer extends Lexer {
 
 				switch (alt3) {
 				case 1 :
-					// src/C2JavaScript.g:253:9: .
+					// src/C2JavaScript.g:277:9: .
 					{
 					matchAny(); 
 					}
@@ -1020,12 +1020,12 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = LINE_COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:260:2: ( '//' (~ ( '\\r' | '\\n' ) )* ( '\\r' )? '\\n' )
-			// src/C2JavaScript.g:260:4: '//' (~ ( '\\r' | '\\n' ) )* ( '\\r' )? '\\n'
+			// src/C2JavaScript.g:284:2: ( '//' (~ ( '\\r' | '\\n' ) )* ( '\\r' )? '\\n' )
+			// src/C2JavaScript.g:284:4: '//' (~ ( '\\r' | '\\n' ) )* ( '\\r' )? '\\n'
 			{
 			match("//"); 
 
-			// src/C2JavaScript.g:260:9: (~ ( '\\r' | '\\n' ) )*
+			// src/C2JavaScript.g:284:9: (~ ( '\\r' | '\\n' ) )*
 			loop4:
 			while (true) {
 				int alt4=2;
@@ -1054,7 +1054,7 @@ public class C2JavaScriptLexer extends Lexer {
 				}
 			}
 
-			// src/C2JavaScript.g:260:27: ( '\\r' )?
+			// src/C2JavaScript.g:284:27: ( '\\r' )?
 			int alt5=2;
 			int LA5_0 = input.LA(1);
 			if ( (LA5_0=='\r') ) {
@@ -1062,7 +1062,7 @@ public class C2JavaScriptLexer extends Lexer {
 			}
 			switch (alt5) {
 				case 1 :
-					// src/C2JavaScript.g:260:27: '\\r'
+					// src/C2JavaScript.g:284:27: '\\r'
 					{
 					match('\r'); 
 					}
@@ -1090,10 +1090,10 @@ public class C2JavaScriptLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/C2JavaScript.g:267:2: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-			// src/C2JavaScript.g:267:4: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			// src/C2JavaScript.g:291:2: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+			// src/C2JavaScript.g:291:4: ( ' ' | '\\t' | '\\r' | '\\n' )+
 			{
-			// src/C2JavaScript.g:267:4: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			// src/C2JavaScript.g:291:4: ( ' ' | '\\t' | '\\r' | '\\n' )+
 			int cnt6=0;
 			loop6:
 			while (true) {

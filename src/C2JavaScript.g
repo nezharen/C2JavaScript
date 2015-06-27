@@ -1,9 +1,9 @@
 grammar C2JavaScript;
 
 program
-	:	expression
+	:	variableDefine
 		{
-			System.out.println($expression.code);
+			System.out.println($variableDefine.code);
 		}
 	;
 
@@ -11,9 +11,33 @@ variableDefine returns [String code]
 @init{
 	code = null;
 }
-	:	type ID variableDefineNext
+	:	type singleVariableDefine variableDefineNext
 		{
-			$code = $type.code + " " + $ID.text + $variableDefineNext.code;
+			$code = $type.code + " " + $singleVariableDefine.code + $variableDefineNext.code;
+		}
+	;
+
+singleVariableDefine returns [String code]
+@init{
+	code = null;
+}
+	:	ID initialValue
+		{
+			$code = $ID.text + $initialValue.code;
+		}
+	;
+
+initialValue returns [String code]
+@init{
+	code = null;
+}
+	:	'=' expr
+		{
+			$code = " = " + $expr.code;
+		}
+	|
+		{
+			$code = "";
 		}
 	;
 
@@ -21,9 +45,9 @@ variableDefineNext returns [String code]
 @init{
 	code = null;
 }
-	:	',' ID a=variableDefineNext
+	:	',' singleVariableDefine a=variableDefineNext
 		{
-			$code = ", " + $ID.text + $a.code;
+			$code = ", " + $singleVariableDefine.code + $a.code;
 		}
 	|	';'
 		{
