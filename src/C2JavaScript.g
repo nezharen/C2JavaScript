@@ -105,33 +105,33 @@ functionStatement returns [String code]
 		{
 			$code = $variableDefine.code + $a.code;
 		}
-	|	expression b=functionStatement
+	|	expression a=functionStatement
 		{
-			$code = $expression.code + $b.code;
+			$code = $expression.code + $a.code;
 		}
-	|	ifStatement c=functionStatement
+	|	ifStatement a=functionStatement
 		{
-			$code = $ifStatement.code + $c.code;
+			$code = $ifStatement.code + $a.code;
 		}
-	|	switchStatement d=functionStatement
+	|	switchStatement a=functionStatement
 		{
-			$code = $switchStatement.code + $d.code;
+			$code = $switchStatement.code + $a.code;
 		}
-	|	forStatement e=functionStatement
+	|	forStatement a=functionStatement
 		{
-			$code = $forStatement.code + $e.code;
+			$code = $forStatement.code + $a.code;
 		}
-	|	whileStatement f=functionStatement
+	|	whileStatement a=functionStatement
 		{
-			$code = $whileStatement.code + $f.code;
+			$code = $whileStatement.code + $a.code;
 		}
-	|	returnStatement g=functionStatement
+	|	returnStatement a=functionStatement
 		{
-			$code = $returnStatement.code + $g.code;
+			$code = $returnStatement.code + $a.code;
 		}
-	|	'{' h=functionStatement '}'
+	|	'{' a=functionStatement '}'
 		{
-			$code = "{\n" + $h.code + "}\n";
+			$code = "{\n" + $a.code + "}\n";
 		}
 	|	'break;'
 		{
@@ -189,9 +189,9 @@ caseStatement returns [String code]
 		{
 			$code = "case " + $expr.code + ":\n" + $functionStatement.code + $a.code;
 		}
-	|	'default:' functionStatement b=caseStatement
+	|	'default:' functionStatement a=caseStatement
 		{
-			$code = "default:\n" + $functionStatement.code + $b.code;
+			$code = "default:\n" + $functionStatement.code + $a.code;
 		}
 	|
 		{
@@ -322,9 +322,9 @@ expr returns [String code]
 		{
 			$code = "(" + $a.code + ")" + $exprNext.code;
 		}
-	|	leftUnaryOperator b=expr exprNext
+	|	leftUnaryOperator a=expr exprNext
 		{
-			$code = $leftUnaryOperator.code + $b.code + $exprNext.code;
+			$code = $leftUnaryOperator.code + $a.code + $exprNext.code;
 		}
 	|	functionCall exprNext
 		{

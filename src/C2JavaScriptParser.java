@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 src/C2JavaScript.g 2015-06-27 21:40:33
+// $ANTLR 3.5.1 src/C2JavaScript.g 2015-06-28 10:05:54
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -583,19 +583,12 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "functionStatement"
-	// src/C2JavaScript.g:100:1: functionStatement returns [String code] : ( variableDefine a= functionStatement | expression b= functionStatement | ifStatement c= functionStatement | switchStatement d= functionStatement | forStatement e= functionStatement | whileStatement f= functionStatement | returnStatement g= functionStatement | '{' h= functionStatement '}' | 'break;' | 'continue;' |);
+	// src/C2JavaScript.g:100:1: functionStatement returns [String code] : ( variableDefine a= functionStatement | expression a= functionStatement | ifStatement a= functionStatement | switchStatement a= functionStatement | forStatement a= functionStatement | whileStatement a= functionStatement | returnStatement a= functionStatement | '{' a= functionStatement '}' | 'break;' | 'continue;' |);
 	public final String functionStatement() throws RecognitionException {
 		String code = null;
 
 
 		String a =null;
-		String b =null;
-		String c =null;
-		String d =null;
-		String e =null;
-		String f =null;
-		String g =null;
-		String h =null;
 		String variableDefine14 =null;
 		String expression15 =null;
 		String ifStatement16 =null;
@@ -608,7 +601,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:104:2: ( variableDefine a= functionStatement | expression b= functionStatement | ifStatement c= functionStatement | switchStatement d= functionStatement | forStatement e= functionStatement | whileStatement f= functionStatement | returnStatement g= functionStatement | '{' h= functionStatement '}' | 'break;' | 'continue;' |)
+			// src/C2JavaScript.g:104:2: ( variableDefine a= functionStatement | expression a= functionStatement | ifStatement a= functionStatement | switchStatement a= functionStatement | forStatement a= functionStatement | whileStatement a= functionStatement | returnStatement a= functionStatement | '{' a= functionStatement '}' | 'break;' | 'continue;' |)
 			int alt6=11;
 			switch ( input.LA(1) ) {
 			case 59:
@@ -762,112 +755,112 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:108:4: expression b= functionStatement
+					// src/C2JavaScript.g:108:4: expression a= functionStatement
 					{
 					pushFollow(FOLLOW_expression_in_functionStatement287);
 					expression15=expression();
 					state._fsp--;
 
 					pushFollow(FOLLOW_functionStatement_in_functionStatement291);
-					b=functionStatement();
+					a=functionStatement();
 					state._fsp--;
 
 
-								code = expression15 + b;
+								code = expression15 + a;
 							
 					}
 					break;
 				case 3 :
-					// src/C2JavaScript.g:112:4: ifStatement c= functionStatement
+					// src/C2JavaScript.g:112:4: ifStatement a= functionStatement
 					{
 					pushFollow(FOLLOW_ifStatement_in_functionStatement300);
 					ifStatement16=ifStatement();
 					state._fsp--;
 
 					pushFollow(FOLLOW_functionStatement_in_functionStatement304);
-					c=functionStatement();
+					a=functionStatement();
 					state._fsp--;
 
 
-								code = ifStatement16 + c;
+								code = ifStatement16 + a;
 							
 					}
 					break;
 				case 4 :
-					// src/C2JavaScript.g:116:4: switchStatement d= functionStatement
+					// src/C2JavaScript.g:116:4: switchStatement a= functionStatement
 					{
 					pushFollow(FOLLOW_switchStatement_in_functionStatement313);
 					switchStatement17=switchStatement();
 					state._fsp--;
 
 					pushFollow(FOLLOW_functionStatement_in_functionStatement317);
-					d=functionStatement();
+					a=functionStatement();
 					state._fsp--;
 
 
-								code = switchStatement17 + d;
+								code = switchStatement17 + a;
 							
 					}
 					break;
 				case 5 :
-					// src/C2JavaScript.g:120:4: forStatement e= functionStatement
+					// src/C2JavaScript.g:120:4: forStatement a= functionStatement
 					{
 					pushFollow(FOLLOW_forStatement_in_functionStatement326);
 					forStatement18=forStatement();
 					state._fsp--;
 
 					pushFollow(FOLLOW_functionStatement_in_functionStatement330);
-					e=functionStatement();
+					a=functionStatement();
 					state._fsp--;
 
 
-								code = forStatement18 + e;
+								code = forStatement18 + a;
 							
 					}
 					break;
 				case 6 :
-					// src/C2JavaScript.g:124:4: whileStatement f= functionStatement
+					// src/C2JavaScript.g:124:4: whileStatement a= functionStatement
 					{
 					pushFollow(FOLLOW_whileStatement_in_functionStatement339);
 					whileStatement19=whileStatement();
 					state._fsp--;
 
 					pushFollow(FOLLOW_functionStatement_in_functionStatement343);
-					f=functionStatement();
+					a=functionStatement();
 					state._fsp--;
 
 
-								code = whileStatement19 + f;
+								code = whileStatement19 + a;
 							
 					}
 					break;
 				case 7 :
-					// src/C2JavaScript.g:128:4: returnStatement g= functionStatement
+					// src/C2JavaScript.g:128:4: returnStatement a= functionStatement
 					{
 					pushFollow(FOLLOW_returnStatement_in_functionStatement352);
 					returnStatement20=returnStatement();
 					state._fsp--;
 
 					pushFollow(FOLLOW_functionStatement_in_functionStatement356);
-					g=functionStatement();
+					a=functionStatement();
 					state._fsp--;
 
 
-								code = returnStatement20 + g;
+								code = returnStatement20 + a;
 							
 					}
 					break;
 				case 8 :
-					// src/C2JavaScript.g:132:4: '{' h= functionStatement '}'
+					// src/C2JavaScript.g:132:4: '{' a= functionStatement '}'
 					{
 					match(input,61,FOLLOW_61_in_functionStatement365); 
 					pushFollow(FOLLOW_functionStatement_in_functionStatement369);
-					h=functionStatement();
+					a=functionStatement();
 					state._fsp--;
 
 					match(input,65,FOLLOW_65_in_functionStatement371); 
 
-								code = "{\n" + h + "}\n";
+								code = "{\n" + a + "}\n";
 							
 					}
 					break;
@@ -1079,13 +1072,12 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "caseStatement"
-	// src/C2JavaScript.g:184:1: caseStatement returns [String code] : ( 'case' expr ':' functionStatement a= caseStatement | 'default:' functionStatement b= caseStatement |);
+	// src/C2JavaScript.g:184:1: caseStatement returns [String code] : ( 'case' expr ':' functionStatement a= caseStatement | 'default:' functionStatement a= caseStatement |);
 	public final String caseStatement() throws RecognitionException {
 		String code = null;
 
 
 		String a =null;
-		String b =null;
 		String expr27 =null;
 		String functionStatement28 =null;
 		String functionStatement29 =null;
@@ -1094,7 +1086,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:188:2: ( 'case' expr ':' functionStatement a= caseStatement | 'default:' functionStatement b= caseStatement |)
+			// src/C2JavaScript.g:188:2: ( 'case' expr ':' functionStatement a= caseStatement | 'default:' functionStatement a= caseStatement |)
 			int alt8=3;
 			switch ( input.LA(1) ) {
 			case 45:
@@ -1141,7 +1133,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:192:4: 'default:' functionStatement b= caseStatement
+					// src/C2JavaScript.g:192:4: 'default:' functionStatement a= caseStatement
 					{
 					match(input,48,FOLLOW_48_in_caseStatement538); 
 					pushFollow(FOLLOW_functionStatement_in_caseStatement540);
@@ -1149,11 +1141,11 @@ public class C2JavaScriptParser extends Parser {
 					state._fsp--;
 
 					pushFollow(FOLLOW_caseStatement_in_caseStatement544);
-					b=caseStatement();
+					a=caseStatement();
 					state._fsp--;
 
 
-								code = "default:\n" + functionStatement29 + b;
+								code = "default:\n" + functionStatement29 + a;
 							
 					}
 					break;
@@ -1681,7 +1673,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "expr"
-	// src/C2JavaScript.g:305:1: expr returns [String code] : ( ID exprNext | NUM exprNext | CHAR exprNext | '(' a= expr ')' exprNext | leftUnaryOperator b= expr exprNext | functionCall exprNext | arrayCall exprNext );
+	// src/C2JavaScript.g:305:1: expr returns [String code] : ( ID exprNext | NUM exprNext | CHAR exprNext | '(' a= expr ')' exprNext | leftUnaryOperator a= expr exprNext | functionCall exprNext | arrayCall exprNext );
 	public final String expr() throws RecognitionException {
 		String code = null;
 
@@ -1690,7 +1682,6 @@ public class C2JavaScriptParser extends Parser {
 		Token NUM48=null;
 		Token CHAR50=null;
 		String a =null;
-		String b =null;
 		String exprNext47 =null;
 		String exprNext49 =null;
 		String exprNext51 =null;
@@ -1706,7 +1697,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:309:2: ( ID exprNext | NUM exprNext | CHAR exprNext | '(' a= expr ')' exprNext | leftUnaryOperator b= expr exprNext | functionCall exprNext | arrayCall exprNext )
+			// src/C2JavaScript.g:309:2: ( ID exprNext | NUM exprNext | CHAR exprNext | '(' a= expr ')' exprNext | leftUnaryOperator a= expr exprNext | functionCall exprNext | arrayCall exprNext )
 			int alt12=7;
 			switch ( input.LA(1) ) {
 			case ID:
@@ -1861,14 +1852,14 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 5 :
-					// src/C2JavaScript.g:325:4: leftUnaryOperator b= expr exprNext
+					// src/C2JavaScript.g:325:4: leftUnaryOperator a= expr exprNext
 					{
 					pushFollow(FOLLOW_leftUnaryOperator_in_expr917);
 					leftUnaryOperator53=leftUnaryOperator();
 					state._fsp--;
 
 					pushFollow(FOLLOW_expr_in_expr921);
-					b=expr();
+					a=expr();
 					state._fsp--;
 
 					pushFollow(FOLLOW_exprNext_in_expr923);
@@ -1876,7 +1867,7 @@ public class C2JavaScriptParser extends Parser {
 					state._fsp--;
 
 
-								code = leftUnaryOperator53 + b + exprNext54;
+								code = leftUnaryOperator53 + a + exprNext54;
 							
 					}
 					break;
