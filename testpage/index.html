@@ -23,6 +23,13 @@
             document.getElementById("result").innerHTML = result;
         };
         document.getElementById("OK").onclick = start_calc;
+        document.getElementById("exp").onkeydown = function (e) {
+            var event = window.event || e;
+            if (event.keyCode == 13) {
+                e.preventDefault();
+                start_calc();
+            }
+        };
     </script>
 </body>
 </html>
