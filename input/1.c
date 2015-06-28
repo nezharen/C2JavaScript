@@ -22,17 +22,3 @@ int Palindrome_checker(char* s)
 	return 1;
 }
 
-int main()
-{
-	char a[10] = "abcdefe";
-	if (Palindrome_checker(a) != 0)
-	{
-		return -1;
-	}
-	char b[10] = "abababa";
-	if (Palindrome_checker(b) != 1)
-	{
-		return -1;
-	}
-	return 0;
-}

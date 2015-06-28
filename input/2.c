@@ -53,12 +53,3 @@ int kmp(char* s, char* t, int* result)
 	return res_len;
 }
 
-int main()
-{
-	int i;
-	int answer[100];
-	char s[100] = "abcdefgabdef";
-	char t[100] = "ab";
-	int len = kmp(s, t, answer);
-	return 0;
-}

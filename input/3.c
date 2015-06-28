@@ -108,11 +108,3 @@ float calc_exp(char* s)
 	return num_stack[num_stack_top];
 }
 
-int main()
-{
-	char exp[100] = "1+(5-2)*4/(2+1)";
-	if (calc_exp(exp) - 5 < 0.0001) {
-		return 1;
-	}
-	return 0;
-}
