@@ -102,4 +102,3 @@ float calc_exp(char* s)
 	return num_stack[num_stack_top];
 }
 
-

@@ -1,5 +1,9 @@
 grammar C2JavaScript;
 
+@members{
+	int tabNum = 0;
+}
+
 program
 	:	programBlock
 		{
@@ -23,11 +27,13 @@ programBlock returns [String code]
 
 functionDefine returns [String code]
 @init{
+	tabNum++;
 	code = null;
 }
 	:	type ID '(' functionArgument ')' '{' functionStatement '}'
 		{
 			$code = "function " + $ID.text + "(" + $functionArgument.code + ")\n" + "{\n" + $functionStatement.code + "}\n";
+			tabNum--;
 		}
 	;
 
@@ -131,15 +137,27 @@ functionStatement returns [String code]
 		}
 	|	'{' a=functionStatement '}'
 		{
-			$code = "{\n" + $a.code + "}\n";
+			$code = "";
+			for (int i = 0; i + 1 < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + "{\n" + $a.code;
+			for (int i = 0; i + 1 < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + "}\n";
 		}
 	|	'break;'
 		{
-			$code = "break;\n";
+			$code = "";
+			for (int i = 0; i < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + "break;\n";
 		}
 	|	'continue;'
 		{
-			$code = "continue;\n";
+			$code = "";
+			for (int i = 0; i < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + "continue;\n";
 		}
 	|
 		{
@@ -150,10 +168,15 @@ functionStatement returns [String code]
 ifStatement returns [String code]
 @init{
 	code = null;
+	tabNum++;
 }
 	:	'if' '(' expr ')' functionStatement ifStatementNext
 		{
-			$code = "if (" + $expr.code + ")\n" + $functionStatement.code + $ifStatementNext.code;
+			tabNum--;
+			$code = "";
+			for (int i = 0; i < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + "if (" + $expr.code + ")\n" + $functionStatement.code + $ifStatementNext.code;
 		}
 	;
 
@@ -163,7 +186,12 @@ ifStatementNext returns [String code]
 }
 	:	'else' functionStatement
 		{
-			$code = "else\n" + $functionStatement.code;
+			tabNum--;
+			$code = "";
+			for (int i = 0; i < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + "else\n" + $functionStatement.code;
+			tabNum++;
 		}
 	|
 		{
@@ -174,10 +202,21 @@ ifStatementNext returns [String code]
 switchStatement returns [String code]
 @init{
 	code = null;
+	tabNum++;
 }
 	:	'switch' '(' expr ')' '{' caseStatement '}'
 		{
-			$code = "switch (" + $expr.code + ")\n{\n" + $caseStatement.code + "}\n";
+			tabNum--;
+			$code = "";
+			for (int i = 0; i < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + "switch (" + $expr.code + ")\n";
+			for (int i = 0; i < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + "{\n" + $caseStatement.code;
+			for (int i = 0; i < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + "}\n";
 		}
 	;
 
@@ -187,11 +226,17 @@ caseStatement returns [String code]
 }
 	:	'case' expr ':' functionStatement a=caseStatement
 		{
-			$code = "case " + $expr.code + ":\n" + $functionStatement.code + $a.code;
+			$code = "";
+			for (int i = 0; i + 1 < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + "case " + $expr.code + ":\n" + $functionStatement.code + $a.code;
 		}
 	|	'default:' functionStatement a=caseStatement
 		{
-			$code = "default:\n" + $functionStatement.code + $a.code;
+			$code = "";
+			for (int i = 0; i + 1 < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + "default:\n" + $functionStatement.code + $a.code;
 		}
 	|
 		{
@@ -202,20 +247,30 @@ caseStatement returns [String code]
 forStatement returns [String code]
 @init{
 	code = null;
+	tabNum++;
 }
 	:	'for' '(' a=expr ';' b=expr ';' c=expr ')' functionStatement
 		{
-			$code = "for (" + $a.code + "; " + $b.code + "; " + $c.code + ")\n" + $functionStatement.code;
+			tabNum--;
+			$code = "";
+			for (int i = 0; i < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + "for (" + $a.code + "; " + $b.code + "; " + $c.code + ")\n" + $functionStatement.code;
 		}
 	;
 
 whileStatement returns [String code]
 @init{
 	code = null;
+	tabNum++;
 }
 	:	'while' '(' expr ')' functionStatement
 		{
-			$code = "while (" + $expr.code + ")\n"  + $functionStatement.code;
+			tabNum--;
+			$code = "";
+			for (int i = 0; i < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + "while (" + $expr.code + ")\n"  + $functionStatement.code;
 		}
 	;
 
@@ -223,9 +278,12 @@ returnStatement returns [String code]
 @init{
 	code = null;
 }
-	:	'return' expression
+	:	'return' expr ';'
 		{
-			$code = "return " + $expression.code;
+			$code = "";
+			for (int i = 0; i < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + "return " + $expr.code + ";\n";
 		}
 	;
 
@@ -235,7 +293,10 @@ variableDefine returns [String code]
 }
 	:	type singleVariableDefine variableDefineNext
 		{
-			$code = $type.code + " " + $singleVariableDefine.code + $variableDefineNext.code;
+			$code = "";
+			for (int i = 0; i < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + $type.code + " " + $singleVariableDefine.code + $variableDefineNext.code;
 		}
 	;
 
@@ -298,7 +359,10 @@ expression returns [String code]
 }
 	:	expr ';'
 		{
-			$code = $expr.code + ";\n";
+			$code = "";
+			for (int i = 0; i < tabNum; i++)
+				$code = $code + "\t";
+			$code = $code + $expr.code + ";\n";
 		}
 	;
 
