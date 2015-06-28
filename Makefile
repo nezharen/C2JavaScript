@@ -3,3 +3,4 @@ all:
 	javac -cp lib/antlrworks-1.5.2-complete.jar -d bin src/*.java
 run:
 	java -cp "lib/antlrworks-1.5.2-complete.jar:bin" Main input.c > output.js
+	cp output.js testpage/output.js

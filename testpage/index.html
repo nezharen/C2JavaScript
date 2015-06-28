@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>C2Javascript</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="output.js"></script>
+
+</head>
+<body>
+    <div class="container" style="text-align:center;padding-top:20px;width:500px">
+        <p style="font-size:26px;line-height:40px;">表达式计算测试</p>
+        <form id="login" class="form-signin" role="form">
+            <input type="text" id="exp" class="form-control form-text" placeholder="输入表达式">
+            <div style="width:100%;text-align:center;padding:20px;"><button id="OK" type="button" class="btn btn-primary" style="width:30%;">OK</button></div>
+        </form>
+        <div id="result" class="alert alert-success" role="alert">这里将会显示结果</div>
+    </div>
+    <script>
+        var start_calc = function() {
+            var exp = document.getElementById("exp").value;
+            var result = calc_exp(exp);
+            document.getElementById("result").innerHTML = result;
+        };
+        document.getElementById("OK").onclick = start_calc;
+    </script>
+</body>
+</html>
