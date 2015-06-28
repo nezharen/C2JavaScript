@@ -16,14 +16,15 @@ float calc_one_step(char sign, float a, float b)
 float calc_exp(char* s)
 {
 	float num_stack[100];
+	num_stack[0] = 0.0;
 	int num_stack_top = 0;
-	float sign_stack[100];
-	int sign_stack_top = -1;
+	char sign_stack[100];
+	sign_stack[0] = '#';
+	int sign_stack_top = 0;
 	float temp;
 	int num_flag = 0;
 	int i = 0;
-	char c;
-	num_stack[0] = 0.0;
+	char c = 0;
 	while (s[i])
 	{
 		c = s[i];
@@ -45,10 +46,10 @@ float calc_exp(char* s)
 				num_stack[num_stack_top] = temp;
 				while (sign_stack[sign_stack_top] == '*' || sign_stack[sign_stack_top] == '/')
                                 {
-                                        temp = calc_one_step(sign_stack[sign_stack_top], num_stack[num_stack_top - 1], num_stack[num_stack_top]);
-                                        sign_stack_top--;
-                                        num_stack_top--;
-                                        num_stack[num_stack_top] = temp;
+					temp = calc_one_step(sign_stack[sign_stack_top], num_stack[num_stack_top - 1], num_stack[num_stack_top]);
+					sign_stack_top--;
+					num_stack_top--;
+					num_stack[num_stack_top] = temp;
                                 }
 			}
 			switch (c)
@@ -65,9 +66,9 @@ float calc_exp(char* s)
 				while (sign_stack[sign_stack_top] == '*' || sign_stack[sign_stack_top] == '/')
 				{
 					temp = calc_one_step(sign_stack[sign_stack_top], num_stack[num_stack_top - 1], num_stack[num_stack_top]);
-                                        sign_stack_top--;
-                                        num_stack_top--;
-                                        num_stack[num_stack_top] = temp;
+					sign_stack_top--;
+					num_stack_top--;
+					num_stack[num_stack_top] = temp;
 				}
 				break;
 			case '*':
@@ -81,24 +82,28 @@ float calc_exp(char* s)
 				while (sign_stack[sign_stack_top] == '+' || sign_stack[sign_stack_top] == '-')
 				{
 					temp = calc_one_step(sign_stack[sign_stack_top], num_stack[num_stack_top - 1], num_stack[num_stack_top]);
-                                        sign_stack_top--;
-                                        num_stack_top--;
-                                        num_stack[num_stack_top] = temp;
+					sign_stack_top--;
+					num_stack_top--;
+					num_stack[num_stack_top] = temp;
 				}
 				sign_stack_top++;
-                                sign_stack[sign_stack_top] = c;
-                                break;
+				sign_stack[sign_stack_top] = c;
+				break;
 			}
 		}
 		i++;
 	}
-	while (sign_stack_top > -1)
+	if (num_flag == 1)
+	{
+		num_stack_top++;
+		num_stack[num_stack_top] = temp;
+	}
+	while (sign_stack_top > 0)
 	{
 		temp = calc_one_step(sign_stack[sign_stack_top], num_stack[num_stack_top - 1], num_stack[num_stack_top]);
-                sign_stack_top--;
-                num_stack_top--;
-                num_stack[num_stack_top] = temp;
+		sign_stack_top--;
+		num_stack_top--;
+		num_stack[num_stack_top] = temp;
 	}
 	return num_stack[num_stack_top];
 }
-
