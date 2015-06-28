@@ -35,7 +35,9 @@ float calc_exp(char* s)
 				num_flag = 1;
 				temp = 0.0;
 			}
-			temp = temp * 10 + c - '0';
+			temp = temp * 10;
+			c = c - '0';
+			temp = temp + c;
 		}
 		else
 		{
