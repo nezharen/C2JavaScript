@@ -17,4 +17,7 @@ Author: WangAnqi, nezharen, tarma.
 	make run
 	```
 
+3. Test:
+	Open testpage/index.html with your web browser and test it.
+
 Please ensure you have JDK installed in your OS before building.
