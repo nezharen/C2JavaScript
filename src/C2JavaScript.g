@@ -1,13 +1,19 @@
 grammar C2JavaScript;
 
 @members{
+	ArrayList<String> variableName = new ArrayList();
+	ArrayList<String> variableError = new ArrayList();
 	int tabNum = 0;
 }
 
 program
 	:	programBlock
 		{
-			System.out.println($programBlock.code);
+			if (variableError.isEmpty())
+				System.out.println($programBlock.code);
+			else
+				for (String i : variableError)
+					System.out.println("Cannot find variable: " + i);
 		}
 	;
 
@@ -28,11 +34,12 @@ programBlock returns [String code]
 functionDefine returns [String code]
 @init{
 	tabNum++;
+	variableName.clear();
 	code = null;
 }
 	:	type ID '(' functionArgument ')' '{' functionStatement '}'
 		{
-			$code = "function " + $ID.text + "(" + $functionArgument.code + ")\n" + "{\n" + $functionStatement.code + "}\n";
+			$code = "function " + $ID.text + "(" + $functionArgument.code + ")\n" + "{\n" + $functionStatement.code + "}\n\n";
 			tabNum--;
 		}
 	;
@@ -43,6 +50,7 @@ functionArgument returns [String code]
 }
 	:	type ID functionArgumentNext
 		{
+			variableName.add($ID.text);
 			$code = $ID.text + $functionArgumentNext.code;
 		}
 	|
@@ -57,6 +65,7 @@ functionArgumentNext returns [String code]
 }
 	:	',' type ID a=functionArgumentNext
 		{
+			variableName.add($ID.text);
 			$code = ", " + $ID.text + $a.code;
 		}
 	|
@@ -306,10 +315,12 @@ singleVariableDefine returns [String code]
 }
 	:	ID initialValue
 		{
+			variableName.add($ID.text);
 			$code = $ID.text + $initialValue.code;
 		}
 	|	ID '[' NUM ']'
 		{
+			variableName.add($ID.text);
 			$code = $ID.text + " = new Array(" + $NUM.text + ")";
 		}
 	;
@@ -348,6 +359,8 @@ arrayCall returns [String code]
 }
 	:	ID '[' expr ']'
 		{
+			if (variableName.indexOf($ID.text) == -1)
+				variableError.add($ID.text);
 			$code = $ID.text + "[" + $expr.code + "]";
 		}
 	;
@@ -372,6 +385,8 @@ expr returns [String code]
 }
 	:	ID exprNext
 		{
+			if (variableName.indexOf($ID.text) == -1)
+				variableError.add($ID.text);
 			$code = $ID.text + $exprNext.code;
 		}
 	|	NUM exprNext
