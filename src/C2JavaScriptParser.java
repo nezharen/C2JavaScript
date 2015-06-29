@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 src/C2JavaScript.g 2015-06-29 13:58:07
+// $ANTLR 3.5.1 src\\C2JavaScript.g 2015-06-29 14:55:37
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -98,7 +98,7 @@ public class C2JavaScriptParser extends Parser {
 	}
 
 	@Override public String[] getTokenNames() { return C2JavaScriptParser.tokenNames; }
-	@Override public String getGrammarFileName() { return "src/C2JavaScript.g"; }
+	@Override public String getGrammarFileName() { return "src\\C2JavaScript.g"; }
 
 
 		ArrayList<String> variableName = new ArrayList();
@@ -108,13 +108,13 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "program"
-	// src/C2JavaScript.g:9:1: program : programBlock ;
+	// src\\C2JavaScript.g:9:1: program : programBlock ;
 	public final void program() throws RecognitionException {
 		String programBlock1 =null;
 
 		try {
-			// src/C2JavaScript.g:10:2: ( programBlock )
-			// src/C2JavaScript.g:10:4: programBlock
+			// src\\C2JavaScript.g:10:2: ( programBlock )
+			// src\\C2JavaScript.g:10:4: programBlock
 			{
 			pushFollow(FOLLOW_programBlock_in_program16);
 			programBlock1=programBlock();
@@ -143,7 +143,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "programBlock"
-	// src/C2JavaScript.g:20:1: programBlock returns [String code] : ( functionDefine a= programBlock |);
+	// src\\C2JavaScript.g:20:1: programBlock returns [String code] : ( functionDefine a= programBlock |);
 	public final String programBlock() throws RecognitionException {
 		String code = null;
 
@@ -155,7 +155,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:24:2: ( functionDefine a= programBlock |)
+			// src\\C2JavaScript.g:24:2: ( functionDefine a= programBlock |)
 			int alt1=2;
 			int LA1_0 = input.LA(1);
 			if ( (LA1_0==46||LA1_0==49||LA1_0==51||(LA1_0 >= 54 && LA1_0 <= 55)||LA1_0==57||LA1_0==59) ) {
@@ -173,7 +173,7 @@ public class C2JavaScriptParser extends Parser {
 
 			switch (alt1) {
 				case 1 :
-					// src/C2JavaScript.g:24:4: functionDefine a= programBlock
+					// src\\C2JavaScript.g:24:4: functionDefine a= programBlock
 					{
 					pushFollow(FOLLOW_functionDefine_in_programBlock39);
 					functionDefine2=functionDefine();
@@ -189,7 +189,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:29:3: 
+					// src\\C2JavaScript.g:29:3: 
 					{
 
 								code = "";
@@ -213,7 +213,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "functionDefine"
-	// src/C2JavaScript.g:34:1: functionDefine returns [String code] : type ID '(' functionArgument ')' '{' functionStatement '}' ;
+	// src\\C2JavaScript.g:34:1: functionDefine returns [String code] : type ID '(' functionArgument ')' '{' functionStatement '}' ;
 	public final String functionDefine() throws RecognitionException {
 		String code = null;
 
@@ -228,8 +228,8 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:40:2: ( type ID '(' functionArgument ')' '{' functionStatement '}' )
-			// src/C2JavaScript.g:40:4: type ID '(' functionArgument ')' '{' functionStatement '}'
+			// src\\C2JavaScript.g:40:2: ( type ID '(' functionArgument ')' '{' functionStatement '}' )
+			// src\\C2JavaScript.g:40:4: type ID '(' functionArgument ')' '{' functionStatement '}'
 			{
 			pushFollow(FOLLOW_type_in_functionDefine73);
 			type();
@@ -269,7 +269,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "functionArgument"
-	// src/C2JavaScript.g:47:1: functionArgument returns [String code] : ( type ID functionArgumentNext |);
+	// src\\C2JavaScript.g:47:1: functionArgument returns [String code] : ( type ID functionArgumentNext |);
 	public final String functionArgument() throws RecognitionException {
 		String code = null;
 
@@ -281,7 +281,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:51:2: ( type ID functionArgumentNext |)
+			// src\\C2JavaScript.g:51:2: ( type ID functionArgumentNext |)
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0==46||LA2_0==49||LA2_0==51||(LA2_0 >= 54 && LA2_0 <= 55)||LA2_0==57||LA2_0==59) ) {
@@ -299,7 +299,7 @@ public class C2JavaScriptParser extends Parser {
 
 			switch (alt2) {
 				case 1 :
-					// src/C2JavaScript.g:51:4: type ID functionArgumentNext
+					// src\\C2JavaScript.g:51:4: type ID functionArgumentNext
 					{
 					pushFollow(FOLLOW_type_in_functionArgument110);
 					type();
@@ -317,7 +317,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:57:3: 
+					// src\\C2JavaScript.g:57:3: 
 					{
 
 								code = "";
@@ -341,7 +341,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "functionArgumentNext"
-	// src/C2JavaScript.g:62:1: functionArgumentNext returns [String code] : ( ',' type ID a= functionArgumentNext |);
+	// src\\C2JavaScript.g:62:1: functionArgumentNext returns [String code] : ( ',' type ID a= functionArgumentNext |);
 	public final String functionArgumentNext() throws RecognitionException {
 		String code = null;
 
@@ -353,7 +353,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:66:2: ( ',' type ID a= functionArgumentNext |)
+			// src\\C2JavaScript.g:66:2: ( ',' type ID a= functionArgumentNext |)
 			int alt3=2;
 			int LA3_0 = input.LA(1);
 			if ( (LA3_0==22) ) {
@@ -371,7 +371,7 @@ public class C2JavaScriptParser extends Parser {
 
 			switch (alt3) {
 				case 1 :
-					// src/C2JavaScript.g:66:4: ',' type ID a= functionArgumentNext
+					// src\\C2JavaScript.g:66:4: ',' type ID a= functionArgumentNext
 					{
 					match(input,22,FOLLOW_22_in_functionArgumentNext144); 
 					pushFollow(FOLLOW_type_in_functionArgumentNext146);
@@ -390,7 +390,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:72:3: 
+					// src\\C2JavaScript.g:72:3: 
 					{
 
 								code = "";
@@ -414,7 +414,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "functionCall"
-	// src/C2JavaScript.g:77:1: functionCall returns [String code] : ID '(' functionCallArgument ')' ;
+	// src\\C2JavaScript.g:77:1: functionCall returns [String code] : ID '(' functionCallArgument ')' ;
 	public final String functionCall() throws RecognitionException {
 		String code = null;
 
@@ -426,8 +426,8 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:81:2: ( ID '(' functionCallArgument ')' )
-			// src/C2JavaScript.g:81:4: ID '(' functionCallArgument ')'
+			// src\\C2JavaScript.g:81:2: ( ID '(' functionCallArgument ')' )
+			// src\\C2JavaScript.g:81:4: ID '(' functionCallArgument ')'
 			{
 			ID9=(Token)match(input,ID,FOLLOW_ID_in_functionCall182); 
 			match(input,15,FOLLOW_15_in_functionCall184); 
@@ -456,7 +456,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "functionCallArgument"
-	// src/C2JavaScript.g:87:1: functionCallArgument returns [String code] : ( expr functionCallArgumentNext |);
+	// src\\C2JavaScript.g:87:1: functionCallArgument returns [String code] : ( expr functionCallArgumentNext |);
 	public final String functionCallArgument() throws RecognitionException {
 		String code = null;
 
@@ -468,7 +468,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:91:2: ( expr functionCallArgumentNext |)
+			// src\\C2JavaScript.g:91:2: ( expr functionCallArgumentNext |)
 			int alt4=2;
 			int LA4_0 = input.LA(1);
 			if ( (LA4_0==CHAR||LA4_0==ID||LA4_0==NUM||LA4_0==10||LA4_0==15||LA4_0==20||(LA4_0 >= 23 && LA4_0 <= 24)||LA4_0==66) ) {
@@ -486,7 +486,7 @@ public class C2JavaScriptParser extends Parser {
 
 			switch (alt4) {
 				case 1 :
-					// src/C2JavaScript.g:91:4: expr functionCallArgumentNext
+					// src\\C2JavaScript.g:91:4: expr functionCallArgumentNext
 					{
 					pushFollow(FOLLOW_expr_in_functionCallArgument211);
 					expr11=expr();
@@ -502,7 +502,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:96:3: 
+					// src\\C2JavaScript.g:96:3: 
 					{
 
 								code = "";
@@ -526,7 +526,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "functionCallArgumentNext"
-	// src/C2JavaScript.g:101:1: functionCallArgumentNext returns [String code] : ( ',' expr a= functionCallArgumentNext |);
+	// src\\C2JavaScript.g:101:1: functionCallArgumentNext returns [String code] : ( ',' expr a= functionCallArgumentNext |);
 	public final String functionCallArgumentNext() throws RecognitionException {
 		String code = null;
 
@@ -538,7 +538,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:105:2: ( ',' expr a= functionCallArgumentNext |)
+			// src\\C2JavaScript.g:105:2: ( ',' expr a= functionCallArgumentNext |)
 			int alt5=2;
 			int LA5_0 = input.LA(1);
 			if ( (LA5_0==22) ) {
@@ -556,7 +556,7 @@ public class C2JavaScriptParser extends Parser {
 
 			switch (alt5) {
 				case 1 :
-					// src/C2JavaScript.g:105:4: ',' expr a= functionCallArgumentNext
+					// src\\C2JavaScript.g:105:4: ',' expr a= functionCallArgumentNext
 					{
 					match(input,22,FOLLOW_22_in_functionCallArgumentNext243); 
 					pushFollow(FOLLOW_expr_in_functionCallArgumentNext245);
@@ -573,7 +573,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:110:3: 
+					// src\\C2JavaScript.g:110:3: 
 					{
 
 								code = "";
@@ -597,7 +597,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "functionStatement"
-	// src/C2JavaScript.g:115:1: functionStatement returns [String code] : ( variableDefine a= functionStatement | expression a= functionStatement | ifStatement a= functionStatement | switchStatement a= functionStatement | forStatement a= functionStatement | whileStatement a= functionStatement | returnStatement a= functionStatement | '{' a= functionStatement '}' | 'break;' | 'continue;' |);
+	// src\\C2JavaScript.g:115:1: functionStatement returns [String code] : ( variableDefine a= functionStatement | expression a= functionStatement | ifStatement a= functionStatement | switchStatement a= functionStatement | forStatement a= functionStatement | whileStatement a= functionStatement | returnStatement a= functionStatement | '{' a= functionStatement '}' | 'break;' | 'continue;' |);
 	public final String functionStatement() throws RecognitionException {
 		String code = null;
 
@@ -615,7 +615,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:119:2: ( variableDefine a= functionStatement | expression a= functionStatement | ifStatement a= functionStatement | switchStatement a= functionStatement | forStatement a= functionStatement | whileStatement a= functionStatement | returnStatement a= functionStatement | '{' a= functionStatement '}' | 'break;' | 'continue;' |)
+			// src\\C2JavaScript.g:119:2: ( variableDefine a= functionStatement | expression a= functionStatement | ifStatement a= functionStatement | switchStatement a= functionStatement | forStatement a= functionStatement | whileStatement a= functionStatement | returnStatement a= functionStatement | '{' a= functionStatement '}' | 'break;' | 'continue;' |)
 			int alt6=11;
 			switch ( input.LA(1) ) {
 			case 59:
@@ -753,7 +753,7 @@ public class C2JavaScriptParser extends Parser {
 			}
 			switch (alt6) {
 				case 1 :
-					// src/C2JavaScript.g:119:4: variableDefine a= functionStatement
+					// src\\C2JavaScript.g:119:4: variableDefine a= functionStatement
 					{
 					pushFollow(FOLLOW_variableDefine_in_functionStatement279);
 					variableDefine14=variableDefine();
@@ -769,7 +769,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:123:4: expression a= functionStatement
+					// src\\C2JavaScript.g:123:4: expression a= functionStatement
 					{
 					pushFollow(FOLLOW_expression_in_functionStatement292);
 					expression15=expression();
@@ -785,7 +785,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 3 :
-					// src/C2JavaScript.g:127:4: ifStatement a= functionStatement
+					// src\\C2JavaScript.g:127:4: ifStatement a= functionStatement
 					{
 					pushFollow(FOLLOW_ifStatement_in_functionStatement305);
 					ifStatement16=ifStatement();
@@ -801,7 +801,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 4 :
-					// src/C2JavaScript.g:131:4: switchStatement a= functionStatement
+					// src\\C2JavaScript.g:131:4: switchStatement a= functionStatement
 					{
 					pushFollow(FOLLOW_switchStatement_in_functionStatement318);
 					switchStatement17=switchStatement();
@@ -817,7 +817,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 5 :
-					// src/C2JavaScript.g:135:4: forStatement a= functionStatement
+					// src\\C2JavaScript.g:135:4: forStatement a= functionStatement
 					{
 					pushFollow(FOLLOW_forStatement_in_functionStatement331);
 					forStatement18=forStatement();
@@ -833,7 +833,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 6 :
-					// src/C2JavaScript.g:139:4: whileStatement a= functionStatement
+					// src\\C2JavaScript.g:139:4: whileStatement a= functionStatement
 					{
 					pushFollow(FOLLOW_whileStatement_in_functionStatement344);
 					whileStatement19=whileStatement();
@@ -849,7 +849,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 7 :
-					// src/C2JavaScript.g:143:4: returnStatement a= functionStatement
+					// src\\C2JavaScript.g:143:4: returnStatement a= functionStatement
 					{
 					pushFollow(FOLLOW_returnStatement_in_functionStatement357);
 					returnStatement20=returnStatement();
@@ -865,7 +865,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 8 :
-					// src/C2JavaScript.g:147:4: '{' a= functionStatement '}'
+					// src\\C2JavaScript.g:147:4: '{' a= functionStatement '}'
 					{
 					match(input,61,FOLLOW_61_in_functionStatement370); 
 					pushFollow(FOLLOW_functionStatement_in_functionStatement374);
@@ -885,7 +885,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 9 :
-					// src/C2JavaScript.g:157:4: 'break;'
+					// src\\C2JavaScript.g:157:4: 'break;'
 					{
 					match(input,44,FOLLOW_44_in_functionStatement385); 
 
@@ -897,7 +897,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 10 :
-					// src/C2JavaScript.g:164:4: 'continue;'
+					// src\\C2JavaScript.g:164:4: 'continue;'
 					{
 					match(input,47,FOLLOW_47_in_functionStatement394); 
 
@@ -909,7 +909,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 11 :
-					// src/C2JavaScript.g:172:3: 
+					// src\\C2JavaScript.g:172:3: 
 					{
 
 								code = "";
@@ -933,7 +933,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "ifStatement"
-	// src/C2JavaScript.g:177:1: ifStatement returns [String code] : 'if' '(' expr ')' functionStatement ifStatementNext ;
+	// src\\C2JavaScript.g:177:1: ifStatement returns [String code] : 'if' '(' expr ')' functionStatement ifStatementNext ;
 	public final String ifStatement() throws RecognitionException {
 		String code = null;
 
@@ -947,8 +947,8 @@ public class C2JavaScriptParser extends Parser {
 			tabNum++;
 
 		try {
-			// src/C2JavaScript.g:182:2: ( 'if' '(' expr ')' functionStatement ifStatementNext )
-			// src/C2JavaScript.g:182:4: 'if' '(' expr ')' functionStatement ifStatementNext
+			// src\\C2JavaScript.g:182:2: ( 'if' '(' expr ')' functionStatement ifStatementNext )
+			// src\\C2JavaScript.g:182:4: 'if' '(' expr ')' functionStatement ifStatementNext
 			{
 			match(input,53,FOLLOW_53_in_ifStatement424); 
 			match(input,15,FOLLOW_15_in_ifStatement426); 
@@ -989,7 +989,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "ifStatementNext"
-	// src/C2JavaScript.g:192:1: ifStatementNext returns [String code] : ( 'else' functionStatement |);
+	// src\\C2JavaScript.g:192:1: ifStatementNext returns [String code] : ( 'else' functionStatement |);
 	public final String ifStatementNext() throws RecognitionException {
 		String code = null;
 
@@ -1000,7 +1000,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:196:2: ( 'else' functionStatement |)
+			// src\\C2JavaScript.g:196:2: ( 'else' functionStatement |)
 			int alt7=2;
 			int LA7_0 = input.LA(1);
 			if ( (LA7_0==50) ) {
@@ -1018,7 +1018,7 @@ public class C2JavaScriptParser extends Parser {
 
 			switch (alt7) {
 				case 1 :
-					// src/C2JavaScript.g:196:4: 'else' functionStatement
+					// src\\C2JavaScript.g:196:4: 'else' functionStatement
 					{
 					match(input,50,FOLLOW_50_in_ifStatementNext457); 
 					pushFollow(FOLLOW_functionStatement_in_ifStatementNext459);
@@ -1036,7 +1036,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:206:3: 
+					// src\\C2JavaScript.g:206:3: 
 					{
 
 								code = "";
@@ -1060,7 +1060,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "switchStatement"
-	// src/C2JavaScript.g:211:1: switchStatement returns [String code] : 'switch' '(' expr ')' '{' caseStatement '}' ;
+	// src\\C2JavaScript.g:211:1: switchStatement returns [String code] : 'switch' '(' expr ')' '{' caseStatement '}' ;
 	public final String switchStatement() throws RecognitionException {
 		String code = null;
 
@@ -1073,8 +1073,8 @@ public class C2JavaScriptParser extends Parser {
 			tabNum++;
 
 		try {
-			// src/C2JavaScript.g:216:2: ( 'switch' '(' expr ')' '{' caseStatement '}' )
-			// src/C2JavaScript.g:216:4: 'switch' '(' expr ')' '{' caseStatement '}'
+			// src\\C2JavaScript.g:216:2: ( 'switch' '(' expr ')' '{' caseStatement '}' )
+			// src\\C2JavaScript.g:216:4: 'switch' '(' expr ')' '{' caseStatement '}'
 			{
 			match(input,58,FOLLOW_58_in_switchStatement489); 
 			match(input,15,FOLLOW_15_in_switchStatement491); 
@@ -1119,7 +1119,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "caseStatement"
-	// src/C2JavaScript.g:232:1: caseStatement returns [String code] : ( 'case' expr ':' functionStatement a= caseStatement | 'default:' functionStatement a= caseStatement |);
+	// src\\C2JavaScript.g:232:1: caseStatement returns [String code] : ( 'case' expr ':' functionStatement a= caseStatement | 'default:' functionStatement a= caseStatement |);
 	public final String caseStatement() throws RecognitionException {
 		String code = null;
 
@@ -1133,7 +1133,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:236:2: ( 'case' expr ':' functionStatement a= caseStatement | 'default:' functionStatement a= caseStatement |)
+			// src\\C2JavaScript.g:236:2: ( 'case' expr ':' functionStatement a= caseStatement | 'default:' functionStatement a= caseStatement |)
 			int alt8=3;
 			switch ( input.LA(1) ) {
 			case 45:
@@ -1158,7 +1158,7 @@ public class C2JavaScriptParser extends Parser {
 			}
 			switch (alt8) {
 				case 1 :
-					// src/C2JavaScript.g:236:4: 'case' expr ':' functionStatement a= caseStatement
+					// src\\C2JavaScript.g:236:4: 'case' expr ':' functionStatement a= caseStatement
 					{
 					match(input,45,FOLLOW_45_in_caseStatement524); 
 					pushFollow(FOLLOW_expr_in_caseStatement526);
@@ -1183,7 +1183,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:243:4: 'default:' functionStatement a= caseStatement
+					// src\\C2JavaScript.g:243:4: 'default:' functionStatement a= caseStatement
 					{
 					match(input,48,FOLLOW_48_in_caseStatement543); 
 					pushFollow(FOLLOW_functionStatement_in_caseStatement545);
@@ -1203,7 +1203,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 3 :
-					// src/C2JavaScript.g:251:3: 
+					// src\\C2JavaScript.g:251:3: 
 					{
 
 								code = "";
@@ -1227,7 +1227,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "forStatement"
-	// src/C2JavaScript.g:256:1: forStatement returns [String code] : 'for' '(' a= expr ';' b= expr ';' c= expr ')' functionStatement ;
+	// src\\C2JavaScript.g:256:1: forStatement returns [String code] : 'for' '(' a= expr ';' b= expr ';' c= expr ')' functionStatement ;
 	public final String forStatement() throws RecognitionException {
 		String code = null;
 
@@ -1242,8 +1242,8 @@ public class C2JavaScriptParser extends Parser {
 			tabNum++;
 
 		try {
-			// src/C2JavaScript.g:261:2: ( 'for' '(' a= expr ';' b= expr ';' c= expr ')' functionStatement )
-			// src/C2JavaScript.g:261:4: 'for' '(' a= expr ';' b= expr ';' c= expr ')' functionStatement
+			// src\\C2JavaScript.g:261:2: ( 'for' '(' a= expr ';' b= expr ';' c= expr ')' functionStatement )
+			// src\\C2JavaScript.g:261:4: 'for' '(' a= expr ';' b= expr ';' c= expr ')' functionStatement
 			{
 			match(input,52,FOLLOW_52_in_forStatement579); 
 			match(input,15,FOLLOW_15_in_forStatement581); 
@@ -1290,7 +1290,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "whileStatement"
-	// src/C2JavaScript.g:271:1: whileStatement returns [String code] : 'while' '(' expr ')' functionStatement ;
+	// src\\C2JavaScript.g:271:1: whileStatement returns [String code] : 'while' '(' expr ')' functionStatement ;
 	public final String whileStatement() throws RecognitionException {
 		String code = null;
 
@@ -1303,8 +1303,8 @@ public class C2JavaScriptParser extends Parser {
 			tabNum++;
 
 		try {
-			// src/C2JavaScript.g:276:2: ( 'while' '(' expr ')' functionStatement )
-			// src/C2JavaScript.g:276:4: 'while' '(' expr ')' functionStatement
+			// src\\C2JavaScript.g:276:2: ( 'while' '(' expr ')' functionStatement )
+			// src\\C2JavaScript.g:276:4: 'while' '(' expr ')' functionStatement
 			{
 			match(input,60,FOLLOW_60_in_whileStatement624); 
 			match(input,15,FOLLOW_15_in_whileStatement626); 
@@ -1341,7 +1341,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "returnStatement"
-	// src/C2JavaScript.g:286:1: returnStatement returns [String code] : 'return' expr ';' ;
+	// src\\C2JavaScript.g:286:1: returnStatement returns [String code] : 'return' expr ';' ;
 	public final String returnStatement() throws RecognitionException {
 		String code = null;
 
@@ -1352,8 +1352,8 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:290:2: ( 'return' expr ';' )
-			// src/C2JavaScript.g:290:4: 'return' expr ';'
+			// src\\C2JavaScript.g:290:2: ( 'return' expr ';' )
+			// src\\C2JavaScript.g:290:4: 'return' expr ';'
 			{
 			match(input,56,FOLLOW_56_in_returnStatement655); 
 			pushFollow(FOLLOW_expr_in_returnStatement657);
@@ -1384,7 +1384,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "variableDefine"
-	// src/C2JavaScript.g:299:1: variableDefine returns [String code] : type singleVariableDefine variableDefineNext ;
+	// src\\C2JavaScript.g:299:1: variableDefine returns [String code] : type singleVariableDefine variableDefineNext ;
 	public final String variableDefine() throws RecognitionException {
 		String code = null;
 
@@ -1397,8 +1397,8 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:303:2: ( type singleVariableDefine variableDefineNext )
-			// src/C2JavaScript.g:303:4: type singleVariableDefine variableDefineNext
+			// src\\C2JavaScript.g:303:2: ( type singleVariableDefine variableDefineNext )
+			// src\\C2JavaScript.g:303:4: type singleVariableDefine variableDefineNext
 			{
 			pushFollow(FOLLOW_type_in_variableDefine682);
 			type34=type();
@@ -1435,7 +1435,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "singleVariableDefine"
-	// src/C2JavaScript.g:312:1: singleVariableDefine returns [String code] : ( ID initialValue | ID '[' NUM ']' );
+	// src\\C2JavaScript.g:312:1: singleVariableDefine returns [String code] : ( ID initialValue | ID '[' NUM ']' );
 	public final String singleVariableDefine() throws RecognitionException {
 		String code = null;
 
@@ -1449,7 +1449,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:316:2: ( ID initialValue | ID '[' NUM ']' )
+			// src\\C2JavaScript.g:316:2: ( ID initialValue | ID '[' NUM ']' )
 			int alt9=2;
 			int LA9_0 = input.LA(1);
 			if ( (LA9_0==ID) ) {
@@ -1483,7 +1483,7 @@ public class C2JavaScriptParser extends Parser {
 
 			switch (alt9) {
 				case 1 :
-					// src/C2JavaScript.g:316:4: ID initialValue
+					// src\\C2JavaScript.g:316:4: ID initialValue
 					{
 					ID37=(Token)match(input,ID,FOLLOW_ID_in_singleVariableDefine709); 
 					pushFollow(FOLLOW_initialValue_in_singleVariableDefine711);
@@ -1497,7 +1497,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:321:4: ID '[' NUM ']'
+					// src\\C2JavaScript.g:321:4: ID '[' NUM ']'
 					{
 					ID39=(Token)match(input,ID,FOLLOW_ID_in_singleVariableDefine720); 
 					match(input,40,FOLLOW_40_in_singleVariableDefine722); 
@@ -1526,7 +1526,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "initialValue"
-	// src/C2JavaScript.g:328:1: initialValue returns [String code] : ( '=' expr |);
+	// src\\C2JavaScript.g:328:1: initialValue returns [String code] : ( '=' expr |);
 	public final String initialValue() throws RecognitionException {
 		String code = null;
 
@@ -1537,7 +1537,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:332:2: ( '=' expr |)
+			// src\\C2JavaScript.g:332:2: ( '=' expr |)
 			int alt10=2;
 			int LA10_0 = input.LA(1);
 			if ( (LA10_0==34) ) {
@@ -1555,7 +1555,7 @@ public class C2JavaScriptParser extends Parser {
 
 			switch (alt10) {
 				case 1 :
-					// src/C2JavaScript.g:332:4: '=' expr
+					// src\\C2JavaScript.g:332:4: '=' expr
 					{
 					match(input,34,FOLLOW_34_in_initialValue749); 
 					pushFollow(FOLLOW_expr_in_initialValue751);
@@ -1568,7 +1568,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:337:3: 
+					// src\\C2JavaScript.g:337:3: 
 					{
 
 								code = "";
@@ -1592,7 +1592,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "variableDefineNext"
-	// src/C2JavaScript.g:342:1: variableDefineNext returns [String code] : ( ',' singleVariableDefine a= variableDefineNext | ';' );
+	// src\\C2JavaScript.g:342:1: variableDefineNext returns [String code] : ( ',' singleVariableDefine a= variableDefineNext | ';' );
 	public final String variableDefineNext() throws RecognitionException {
 		String code = null;
 
@@ -1604,7 +1604,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:346:2: ( ',' singleVariableDefine a= variableDefineNext | ';' )
+			// src\\C2JavaScript.g:346:2: ( ',' singleVariableDefine a= variableDefineNext | ';' )
 			int alt11=2;
 			int LA11_0 = input.LA(1);
 			if ( (LA11_0==22) ) {
@@ -1622,7 +1622,7 @@ public class C2JavaScriptParser extends Parser {
 
 			switch (alt11) {
 				case 1 :
-					// src/C2JavaScript.g:346:4: ',' singleVariableDefine a= variableDefineNext
+					// src\\C2JavaScript.g:346:4: ',' singleVariableDefine a= variableDefineNext
 					{
 					match(input,22,FOLLOW_22_in_variableDefineNext781); 
 					pushFollow(FOLLOW_singleVariableDefine_in_variableDefineNext783);
@@ -1639,7 +1639,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:350:4: ';'
+					// src\\C2JavaScript.g:350:4: ';'
 					{
 					match(input,29,FOLLOW_29_in_variableDefineNext796); 
 
@@ -1664,7 +1664,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "arrayCall"
-	// src/C2JavaScript.g:356:1: arrayCall returns [String code] : ID '[' expr ']' ;
+	// src\\C2JavaScript.g:356:1: arrayCall returns [String code] : ID '[' expr ']' ;
 	public final String arrayCall() throws RecognitionException {
 		String code = null;
 
@@ -1676,8 +1676,8 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:360:2: ( ID '[' expr ']' )
-			// src/C2JavaScript.g:360:4: ID '[' expr ']'
+			// src\\C2JavaScript.g:360:2: ( ID '[' expr ']' )
+			// src\\C2JavaScript.g:360:4: ID '[' expr ']'
 			{
 			ID43=(Token)match(input,ID,FOLLOW_ID_in_arrayCall819); 
 			match(input,40,FOLLOW_40_in_arrayCall821); 
@@ -1708,7 +1708,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "expression"
-	// src/C2JavaScript.g:369:1: expression returns [String code] : expr ';' ;
+	// src\\C2JavaScript.g:369:1: expression returns [String code] : expr ';' ;
 	public final String expression() throws RecognitionException {
 		String code = null;
 
@@ -1719,8 +1719,8 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:373:2: ( expr ';' )
-			// src/C2JavaScript.g:373:4: expr ';'
+			// src\\C2JavaScript.g:373:2: ( expr ';' )
+			// src\\C2JavaScript.g:373:4: expr ';'
 			{
 			pushFollow(FOLLOW_expr_in_expression849);
 			expr45=expr();
@@ -1750,7 +1750,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "expr"
-	// src/C2JavaScript.g:382:1: expr returns [String code] : ( ID exprNext | NUM exprNext | CHAR exprNext | '(' a= expr ')' exprNext | leftUnaryOperator a= expr exprNext | functionCall exprNext | arrayCall exprNext );
+	// src\\C2JavaScript.g:382:1: expr returns [String code] : ( ID exprNext | NUM exprNext | CHAR exprNext | '(' a= expr ')' exprNext | leftUnaryOperator a= expr exprNext | functionCall exprNext | arrayCall exprNext );
 	public final String expr() throws RecognitionException {
 		String code = null;
 
@@ -1774,7 +1774,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:386:2: ( ID exprNext | NUM exprNext | CHAR exprNext | '(' a= expr ')' exprNext | leftUnaryOperator a= expr exprNext | functionCall exprNext | arrayCall exprNext )
+			// src\\C2JavaScript.g:386:2: ( ID exprNext | NUM exprNext | CHAR exprNext | '(' a= expr ')' exprNext | leftUnaryOperator a= expr exprNext | functionCall exprNext | arrayCall exprNext )
 			int alt12=7;
 			switch ( input.LA(1) ) {
 			case ID:
@@ -1872,7 +1872,7 @@ public class C2JavaScriptParser extends Parser {
 			}
 			switch (alt12) {
 				case 1 :
-					// src/C2JavaScript.g:386:4: ID exprNext
+					// src\\C2JavaScript.g:386:4: ID exprNext
 					{
 					ID46=(Token)match(input,ID,FOLLOW_ID_in_expr874); 
 					pushFollow(FOLLOW_exprNext_in_expr876);
@@ -1887,7 +1887,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:392:4: NUM exprNext
+					// src\\C2JavaScript.g:392:4: NUM exprNext
 					{
 					NUM48=(Token)match(input,NUM,FOLLOW_NUM_in_expr885); 
 					pushFollow(FOLLOW_exprNext_in_expr887);
@@ -1900,7 +1900,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 3 :
-					// src/C2JavaScript.g:396:4: CHAR exprNext
+					// src\\C2JavaScript.g:396:4: CHAR exprNext
 					{
 					CHAR50=(Token)match(input,CHAR,FOLLOW_CHAR_in_expr896); 
 					pushFollow(FOLLOW_exprNext_in_expr898);
@@ -1913,7 +1913,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 4 :
-					// src/C2JavaScript.g:400:4: '(' a= expr ')' exprNext
+					// src\\C2JavaScript.g:400:4: '(' a= expr ')' exprNext
 					{
 					match(input,15,FOLLOW_15_in_expr907); 
 					pushFollow(FOLLOW_expr_in_expr911);
@@ -1931,7 +1931,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 5 :
-					// src/C2JavaScript.g:404:4: leftUnaryOperator a= expr exprNext
+					// src\\C2JavaScript.g:404:4: leftUnaryOperator a= expr exprNext
 					{
 					pushFollow(FOLLOW_leftUnaryOperator_in_expr924);
 					leftUnaryOperator53=leftUnaryOperator();
@@ -1951,7 +1951,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 6 :
-					// src/C2JavaScript.g:408:4: functionCall exprNext
+					// src\\C2JavaScript.g:408:4: functionCall exprNext
 					{
 					pushFollow(FOLLOW_functionCall_in_expr939);
 					functionCall55=functionCall();
@@ -1967,7 +1967,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 7 :
-					// src/C2JavaScript.g:412:4: arrayCall exprNext
+					// src\\C2JavaScript.g:412:4: arrayCall exprNext
 					{
 					pushFollow(FOLLOW_arrayCall_in_expr950);
 					arrayCall57=arrayCall();
@@ -1999,7 +1999,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "exprNext"
-	// src/C2JavaScript.g:418:1: exprNext returns [String code] : ( binaryOperator expr a= exprNext | rightUnaryOperator |);
+	// src\\C2JavaScript.g:418:1: exprNext returns [String code] : ( binaryOperator expr a= exprNext | rightUnaryOperator |);
 	public final String exprNext() throws RecognitionException {
 		String code = null;
 
@@ -2013,7 +2013,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:422:2: ( binaryOperator expr a= exprNext | rightUnaryOperator |)
+			// src\\C2JavaScript.g:422:2: ( binaryOperator expr a= exprNext | rightUnaryOperator |)
 			int alt13=3;
 			switch ( input.LA(1) ) {
 			case 19:
@@ -2177,7 +2177,7 @@ public class C2JavaScriptParser extends Parser {
 			}
 			switch (alt13) {
 				case 1 :
-					// src/C2JavaScript.g:422:4: binaryOperator expr a= exprNext
+					// src\\C2JavaScript.g:422:4: binaryOperator expr a= exprNext
 					{
 					pushFollow(FOLLOW_binaryOperator_in_exprNext975);
 					binaryOperator59=binaryOperator();
@@ -2197,7 +2197,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:426:4: rightUnaryOperator
+					// src\\C2JavaScript.g:426:4: rightUnaryOperator
 					{
 					pushFollow(FOLLOW_rightUnaryOperator_in_exprNext990);
 					rightUnaryOperator61=rightUnaryOperator();
@@ -2209,7 +2209,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 3 :
-					// src/C2JavaScript.g:431:3: 
+					// src\\C2JavaScript.g:431:3: 
 					{
 
 								code = "";
@@ -2233,7 +2233,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "leftUnaryOperator"
-	// src/C2JavaScript.g:436:1: leftUnaryOperator returns [String code] : ( '!' | '~' | '++' | '--' | '-' );
+	// src\\C2JavaScript.g:436:1: leftUnaryOperator returns [String code] : ( '!' | '~' | '++' | '--' | '-' );
 	public final String leftUnaryOperator() throws RecognitionException {
 		String code = null;
 
@@ -2242,7 +2242,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:440:2: ( '!' | '~' | '++' | '--' | '-' )
+			// src\\C2JavaScript.g:440:2: ( '!' | '~' | '++' | '--' | '-' )
 			int alt14=5;
 			switch ( input.LA(1) ) {
 			case 10:
@@ -2277,7 +2277,7 @@ public class C2JavaScriptParser extends Parser {
 			}
 			switch (alt14) {
 				case 1 :
-					// src/C2JavaScript.g:440:4: '!'
+					// src\\C2JavaScript.g:440:4: '!'
 					{
 					match(input,10,FOLLOW_10_in_leftUnaryOperator1020); 
 
@@ -2286,7 +2286,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:444:4: '~'
+					// src\\C2JavaScript.g:444:4: '~'
 					{
 					match(input,66,FOLLOW_66_in_leftUnaryOperator1029); 
 
@@ -2295,7 +2295,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 3 :
-					// src/C2JavaScript.g:448:4: '++'
+					// src\\C2JavaScript.g:448:4: '++'
 					{
 					match(input,20,FOLLOW_20_in_leftUnaryOperator1038); 
 
@@ -2304,7 +2304,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 4 :
-					// src/C2JavaScript.g:452:4: '--'
+					// src\\C2JavaScript.g:452:4: '--'
 					{
 					match(input,24,FOLLOW_24_in_leftUnaryOperator1047); 
 
@@ -2313,7 +2313,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 5 :
-					// src/C2JavaScript.g:456:4: '-'
+					// src\\C2JavaScript.g:456:4: '-'
 					{
 					match(input,23,FOLLOW_23_in_leftUnaryOperator1056); 
 
@@ -2338,7 +2338,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "rightUnaryOperator"
-	// src/C2JavaScript.g:462:1: rightUnaryOperator returns [String code] : ( '++' | '--' );
+	// src\\C2JavaScript.g:462:1: rightUnaryOperator returns [String code] : ( '++' | '--' );
 	public final String rightUnaryOperator() throws RecognitionException {
 		String code = null;
 
@@ -2347,7 +2347,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:466:2: ( '++' | '--' )
+			// src\\C2JavaScript.g:466:2: ( '++' | '--' )
 			int alt15=2;
 			int LA15_0 = input.LA(1);
 			if ( (LA15_0==20) ) {
@@ -2365,7 +2365,7 @@ public class C2JavaScriptParser extends Parser {
 
 			switch (alt15) {
 				case 1 :
-					// src/C2JavaScript.g:466:4: '++'
+					// src\\C2JavaScript.g:466:4: '++'
 					{
 					match(input,20,FOLLOW_20_in_rightUnaryOperator1079); 
 
@@ -2374,7 +2374,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:470:4: '--'
+					// src\\C2JavaScript.g:470:4: '--'
 					{
 					match(input,24,FOLLOW_24_in_rightUnaryOperator1088); 
 
@@ -2399,7 +2399,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "binaryOperator"
-	// src/C2JavaScript.g:476:1: binaryOperator returns [String code] : ( '+' | '-' | '*' | '/' | '>' | '>=' | '<' | '<=' | '==' | '!=' | '&&' | '||' | '&' | '|' | '^' | '<<' | '>>' | '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '<<=' | '>>=' );
+	// src\\C2JavaScript.g:476:1: binaryOperator returns [String code] : ( '+' | '-' | '*' | '/' | '>' | '>=' | '<' | '<=' | '==' | '!=' | '&&' | '||' | '&' | '|' | '^' | '<<' | '>>' | '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '<<=' | '>>=' );
 	public final String binaryOperator() throws RecognitionException {
 		String code = null;
 
@@ -2408,7 +2408,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:480:2: ( '+' | '-' | '*' | '/' | '>' | '>=' | '<' | '<=' | '==' | '!=' | '&&' | '||' | '&' | '|' | '^' | '<<' | '>>' | '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '<<=' | '>>=' )
+			// src\\C2JavaScript.g:480:2: ( '+' | '-' | '*' | '/' | '>' | '>=' | '<' | '<=' | '==' | '!=' | '&&' | '||' | '&' | '|' | '^' | '<<' | '>>' | '=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '<<=' | '>>=' )
 			int alt16=27;
 			switch ( input.LA(1) ) {
 			case 19:
@@ -2553,7 +2553,7 @@ public class C2JavaScriptParser extends Parser {
 			}
 			switch (alt16) {
 				case 1 :
-					// src/C2JavaScript.g:480:4: '+'
+					// src\\C2JavaScript.g:480:4: '+'
 					{
 					match(input,19,FOLLOW_19_in_binaryOperator1111); 
 
@@ -2562,7 +2562,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:484:4: '-'
+					// src\\C2JavaScript.g:484:4: '-'
 					{
 					match(input,23,FOLLOW_23_in_binaryOperator1120); 
 
@@ -2571,7 +2571,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 3 :
-					// src/C2JavaScript.g:488:4: '*'
+					// src\\C2JavaScript.g:488:4: '*'
 					{
 					match(input,17,FOLLOW_17_in_binaryOperator1129); 
 
@@ -2580,7 +2580,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 4 :
-					// src/C2JavaScript.g:492:4: '/'
+					// src\\C2JavaScript.g:492:4: '/'
 					{
 					match(input,26,FOLLOW_26_in_binaryOperator1138); 
 
@@ -2589,7 +2589,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 5 :
-					// src/C2JavaScript.g:496:4: '>'
+					// src\\C2JavaScript.g:496:4: '>'
 					{
 					match(input,36,FOLLOW_36_in_binaryOperator1147); 
 
@@ -2598,7 +2598,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 6 :
-					// src/C2JavaScript.g:500:4: '>='
+					// src\\C2JavaScript.g:500:4: '>='
 					{
 					match(input,37,FOLLOW_37_in_binaryOperator1156); 
 
@@ -2607,7 +2607,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 7 :
-					// src/C2JavaScript.g:504:4: '<'
+					// src\\C2JavaScript.g:504:4: '<'
 					{
 					match(input,30,FOLLOW_30_in_binaryOperator1165); 
 
@@ -2616,7 +2616,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 8 :
-					// src/C2JavaScript.g:508:4: '<='
+					// src\\C2JavaScript.g:508:4: '<='
 					{
 					match(input,33,FOLLOW_33_in_binaryOperator1174); 
 
@@ -2625,7 +2625,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 9 :
-					// src/C2JavaScript.g:512:4: '=='
+					// src\\C2JavaScript.g:512:4: '=='
 					{
 					match(input,35,FOLLOW_35_in_binaryOperator1183); 
 
@@ -2634,7 +2634,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 10 :
-					// src/C2JavaScript.g:516:4: '!='
+					// src\\C2JavaScript.g:516:4: '!='
 					{
 					match(input,11,FOLLOW_11_in_binaryOperator1192); 
 
@@ -2643,7 +2643,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 11 :
-					// src/C2JavaScript.g:520:4: '&&'
+					// src\\C2JavaScript.g:520:4: '&&'
 					{
 					match(input,12,FOLLOW_12_in_binaryOperator1201); 
 
@@ -2652,7 +2652,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 12 :
-					// src/C2JavaScript.g:524:4: '||'
+					// src\\C2JavaScript.g:524:4: '||'
 					{
 					match(input,64,FOLLOW_64_in_binaryOperator1210); 
 
@@ -2661,7 +2661,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 13 :
-					// src/C2JavaScript.g:528:4: '&'
+					// src\\C2JavaScript.g:528:4: '&'
 					{
 					match(input,13,FOLLOW_13_in_binaryOperator1219); 
 
@@ -2670,7 +2670,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 14 :
-					// src/C2JavaScript.g:532:4: '|'
+					// src\\C2JavaScript.g:532:4: '|'
 					{
 					match(input,62,FOLLOW_62_in_binaryOperator1228); 
 
@@ -2679,7 +2679,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 15 :
-					// src/C2JavaScript.g:536:4: '^'
+					// src\\C2JavaScript.g:536:4: '^'
 					{
 					match(input,42,FOLLOW_42_in_binaryOperator1237); 
 
@@ -2688,7 +2688,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 16 :
-					// src/C2JavaScript.g:540:4: '<<'
+					// src\\C2JavaScript.g:540:4: '<<'
 					{
 					match(input,31,FOLLOW_31_in_binaryOperator1246); 
 
@@ -2697,7 +2697,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 17 :
-					// src/C2JavaScript.g:544:4: '>>'
+					// src\\C2JavaScript.g:544:4: '>>'
 					{
 					match(input,38,FOLLOW_38_in_binaryOperator1255); 
 
@@ -2706,7 +2706,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 18 :
-					// src/C2JavaScript.g:548:4: '='
+					// src\\C2JavaScript.g:548:4: '='
 					{
 					match(input,34,FOLLOW_34_in_binaryOperator1264); 
 
@@ -2715,7 +2715,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 19 :
-					// src/C2JavaScript.g:552:4: '+='
+					// src\\C2JavaScript.g:552:4: '+='
 					{
 					match(input,21,FOLLOW_21_in_binaryOperator1273); 
 
@@ -2724,7 +2724,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 20 :
-					// src/C2JavaScript.g:556:4: '-='
+					// src\\C2JavaScript.g:556:4: '-='
 					{
 					match(input,25,FOLLOW_25_in_binaryOperator1282); 
 
@@ -2733,7 +2733,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 21 :
-					// src/C2JavaScript.g:560:4: '*='
+					// src\\C2JavaScript.g:560:4: '*='
 					{
 					match(input,18,FOLLOW_18_in_binaryOperator1291); 
 
@@ -2742,7 +2742,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 22 :
-					// src/C2JavaScript.g:564:4: '/='
+					// src\\C2JavaScript.g:564:4: '/='
 					{
 					match(input,27,FOLLOW_27_in_binaryOperator1300); 
 
@@ -2751,7 +2751,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 23 :
-					// src/C2JavaScript.g:568:4: '&='
+					// src\\C2JavaScript.g:568:4: '&='
 					{
 					match(input,14,FOLLOW_14_in_binaryOperator1309); 
 
@@ -2760,7 +2760,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 24 :
-					// src/C2JavaScript.g:572:4: '|='
+					// src\\C2JavaScript.g:572:4: '|='
 					{
 					match(input,63,FOLLOW_63_in_binaryOperator1318); 
 
@@ -2769,7 +2769,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 25 :
-					// src/C2JavaScript.g:576:4: '^='
+					// src\\C2JavaScript.g:576:4: '^='
 					{
 					match(input,43,FOLLOW_43_in_binaryOperator1327); 
 
@@ -2778,7 +2778,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 26 :
-					// src/C2JavaScript.g:580:4: '<<='
+					// src\\C2JavaScript.g:580:4: '<<='
 					{
 					match(input,32,FOLLOW_32_in_binaryOperator1336); 
 
@@ -2787,7 +2787,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 27 :
-					// src/C2JavaScript.g:584:4: '>>='
+					// src\\C2JavaScript.g:584:4: '>>='
 					{
 					match(input,39,FOLLOW_39_in_binaryOperator1345); 
 
@@ -2812,7 +2812,7 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "type"
-	// src/C2JavaScript.g:590:1: type returns [String code] : ( 'void' typeNext | 'char' typeNext | 'short' typeNext | 'int' typeNext | 'long' typeNext | 'float' typeNext | 'double' typeNext );
+	// src\\C2JavaScript.g:590:1: type returns [String code] : ( 'void' typeNext | 'char' typeNext | 'short' typeNext | 'int' typeNext | 'long' typeNext | 'float' typeNext | 'double' typeNext );
 	public final String type() throws RecognitionException {
 		String code = null;
 
@@ -2821,7 +2821,7 @@ public class C2JavaScriptParser extends Parser {
 			code = null;
 
 		try {
-			// src/C2JavaScript.g:594:2: ( 'void' typeNext | 'char' typeNext | 'short' typeNext | 'int' typeNext | 'long' typeNext | 'float' typeNext | 'double' typeNext )
+			// src\\C2JavaScript.g:594:2: ( 'void' typeNext | 'char' typeNext | 'short' typeNext | 'int' typeNext | 'long' typeNext | 'float' typeNext | 'double' typeNext )
 			int alt17=7;
 			switch ( input.LA(1) ) {
 			case 59:
@@ -2866,7 +2866,7 @@ public class C2JavaScriptParser extends Parser {
 			}
 			switch (alt17) {
 				case 1 :
-					// src/C2JavaScript.g:594:4: 'void' typeNext
+					// src\\C2JavaScript.g:594:4: 'void' typeNext
 					{
 					match(input,59,FOLLOW_59_in_type1368); 
 					pushFollow(FOLLOW_typeNext_in_type1370);
@@ -2879,7 +2879,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:598:4: 'char' typeNext
+					// src\\C2JavaScript.g:598:4: 'char' typeNext
 					{
 					match(input,46,FOLLOW_46_in_type1379); 
 					pushFollow(FOLLOW_typeNext_in_type1381);
@@ -2892,7 +2892,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 3 :
-					// src/C2JavaScript.g:602:4: 'short' typeNext
+					// src\\C2JavaScript.g:602:4: 'short' typeNext
 					{
 					match(input,57,FOLLOW_57_in_type1390); 
 					pushFollow(FOLLOW_typeNext_in_type1392);
@@ -2905,7 +2905,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 4 :
-					// src/C2JavaScript.g:606:4: 'int' typeNext
+					// src\\C2JavaScript.g:606:4: 'int' typeNext
 					{
 					match(input,54,FOLLOW_54_in_type1401); 
 					pushFollow(FOLLOW_typeNext_in_type1403);
@@ -2918,7 +2918,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 5 :
-					// src/C2JavaScript.g:610:4: 'long' typeNext
+					// src\\C2JavaScript.g:610:4: 'long' typeNext
 					{
 					match(input,55,FOLLOW_55_in_type1412); 
 					pushFollow(FOLLOW_typeNext_in_type1414);
@@ -2931,7 +2931,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 6 :
-					// src/C2JavaScript.g:614:4: 'float' typeNext
+					// src\\C2JavaScript.g:614:4: 'float' typeNext
 					{
 					match(input,51,FOLLOW_51_in_type1423); 
 					pushFollow(FOLLOW_typeNext_in_type1425);
@@ -2944,7 +2944,7 @@ public class C2JavaScriptParser extends Parser {
 					}
 					break;
 				case 7 :
-					// src/C2JavaScript.g:618:4: 'double' typeNext
+					// src\\C2JavaScript.g:618:4: 'double' typeNext
 					{
 					match(input,49,FOLLOW_49_in_type1434); 
 					pushFollow(FOLLOW_typeNext_in_type1436);
@@ -2973,10 +2973,10 @@ public class C2JavaScriptParser extends Parser {
 
 
 	// $ANTLR start "typeNext"
-	// src/C2JavaScript.g:624:1: typeNext : ( '*' |);
+	// src\\C2JavaScript.g:624:1: typeNext : ( '*' |);
 	public final void typeNext() throws RecognitionException {
 		try {
-			// src/C2JavaScript.g:625:2: ( '*' |)
+			// src\\C2JavaScript.g:625:2: ( '*' |)
 			int alt18=2;
 			int LA18_0 = input.LA(1);
 			if ( (LA18_0==17) ) {
@@ -2994,13 +2994,13 @@ public class C2JavaScriptParser extends Parser {
 
 			switch (alt18) {
 				case 1 :
-					// src/C2JavaScript.g:625:4: '*'
+					// src\\C2JavaScript.g:625:4: '*'
 					{
 					match(input,17,FOLLOW_17_in_typeNext1451); 
 					}
 					break;
 				case 2 :
-					// src/C2JavaScript.g:627:2: 
+					// src\\C2JavaScript.g:627:2: 
 					{
 					}
 					break;
